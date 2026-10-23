@@ -1,8 +1,8 @@
 /* 1. TETAPAN PEMILIK
    Isi nombor dengan kod negara tanpa +, ruang atau sengkang.
    Contoh format Malaysia: 60 diikuti nombor tanpa sifar awal.
-   Biarkan kosong semasa menggunakan template. */
-const nomborWhatsApp = '';
+   Nombor ini ialah nombor Affendi Ahmad untuk pertanyaan homestay. */
+const nomborWhatsApp = '601111248074';
 const masaPeralihan = 2000;
 const nomborSah = /^[1-9]\d{7,14}$/.test(nomborWhatsApp);
 

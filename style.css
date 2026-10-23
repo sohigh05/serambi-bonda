@@ -744,6 +744,19 @@ em {
   margin-bottom: 14px;
 }
 
+/* Nombor dan pautan WhatsApp mudah nampak serta mudah ditekan di telefon. */
+.contact-number, .contact-whatsapp {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding-block: 3px;
+}
+
+.contact-whatsapp {
+  margin-top: 4px;
+}
+
 .map-panel {
   margin-top: 30px;
   background: #e4e7da;

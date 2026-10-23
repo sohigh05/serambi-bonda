@@ -203,6 +203,9 @@ if ('serviceWorker' in navigator) {
 const installDialog = document.getElementById('install-dialog');
 const installButton = document.getElementById('install-button');
 const installSteps = document.getElementById('install-steps');
+const installVisualGuide = document.getElementById('install-ios-guide');
+const installDescription = document.getElementById('install-description');
+const installReopen = document.getElementById('install-reopen');
 let installPrompt = null;
 
 function sudahDipasang() {
@@ -215,22 +218,24 @@ function kemasKiniTawaranPasang() {
   const telefonAndroid = /Android/i.test(navigator.userAgent);
   const safariMac = /Macintosh/.test(navigator.userAgent) &&
     /Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg/.test(navigator.userAgent);
-  installButton.hidden = !installPrompt;
+  installButton.hidden = !installPrompt || telefonApple;
+  installVisualGuide.hidden = !telefonApple;
+  installSteps.hidden = telefonApple;
 
   if (telefonApple) {
-    installSteps.textContent = 'iPhone / iPad: buka dalam Safari, tekan Kongsi → Tambah ke Skrin Utama → Tambah.';
+    installDescription.textContent = 'Add this website to your iPhone or iPad Home Screen and open it like an app.';
   } else if (telefonAndroid) {
-    installSteps.textContent = 'Android: jika butang Pasang aplikasi muncul, tekan. Jika tiada, buka dalam Chrome dan pilih Pasang aplikasi melalui menu pelayar.';
+    installSteps.textContent = 'Android: tap Install app below if the button appears. Otherwise, open the Chrome menu and choose Install app or Add to Home screen.';
   } else if (safariMac) {
-    installSteps.textContent = 'Mac Safari: tekan Kongsi → Tambah ke Dock, kemudian pilih Tambah.';
+    installSteps.textContent = 'Mac Safari: open the Share menu, choose Add to Dock, then select Add.';
   } else {
-    installSteps.textContent = 'Komputer: jika butang Pasang aplikasi muncul, tekan. Jika tiada, buka dalam Chrome atau Edge dan pilih Pasang melalui bar alamat atau menu pelayar.';
+    installSteps.textContent = 'Computer: click Install app below if the button appears. Otherwise, use the install icon in the Chrome or Edge address bar or browser menu.';
   }
 }
 
-function bukaTawaranPasang() {
+function bukaTawaranPasang(manual = false) {
   const lamanSelamat = location.protocol === 'https:' || location.hostname === 'localhost';
-  if (!lamanSelamat || sudahDipasang() || installDialog.open) return;
+  if ((!lamanSelamat && !manual) || sudahDipasang() || installDialog.open) return;
   kemasKiniTawaranPasang();
   installDialog.showModal();
   document.getElementById('install-title').focus({ preventScroll: true });
@@ -259,6 +264,12 @@ installButton.addEventListener('click', async function () {
 window.addEventListener('appinstalled', function () {
   installPrompt = null;
   if (installDialog.open) installDialog.close();
+  installReopen.hidden = true;
+});
+
+installReopen.hidden = sudahDipasang();
+installReopen.addEventListener('click', function () {
+  bukaTawaranPasang(true);
 });
 
 document.getElementById('close-install').addEventListener('click', function () {

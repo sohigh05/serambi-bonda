@@ -1,15 +1,17 @@
 /* Fail ini menyimpan halaman dan foto supaya PWA boleh dibuka semasa offline.
    Tukar nombor versi apabila kandungan laman dikemas kini. */
-const CACHE_NAME = 'serambi-bonda-v3';
+const CACHE_NAME = 'serambi-bonda-v5';
 const LOCAL_FILES = [
-  './', './index.html', './style.css', './script.js',
+  './', './index.html', './style.css?v=5', './script.js?v=5',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
   './icons/apple-touch-icon.png',
   './images/foto-01.jpg', './images/foto-02.jpg', './images/foto-03.jpg',
   './images/foto-04.jpg', './images/foto-05.jpg', './images/foto-06.jpg',
   './images/foto-07.jpg', './images/foto-08.jpg', './images/foto-09.jpg',
   './images/foto-10.jpg', './images/foto-11.jpg', './images/foto-12.jpg',
-  './images/foto-13.jpg', './images/foto-14.jpg'
+  './images/foto-13.jpg', './images/foto-14.jpg',
+  './images/install-step-1.png', './images/install-step-2.png',
+  './images/install-step-3.png'
 ];
 
 self.addEventListener('install', function (event) {

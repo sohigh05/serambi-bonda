@@ -2,7 +2,7 @@
 
 Laman homestay keluarga di Kampung Ulu Kenderung, Gerik, Perak. Dibina dengan HTML, CSS dan JavaScript biasa supaya mudah dibaca dan diubah.
 
-Buka `index.html` untuk melihat laman secara tempatan. PWA memerlukan HTTPS atau `localhost` untuk dipasang. Popup tawaran aplikasi muncul selepas laman dibuka dalam pelayar telefon, tablet atau komputer. Android dan Chrome/Edge komputer mendapat butang pemasangan apabila pelayar menyokongnya; Safari memaparkan langkah melalui menu Kongsi. Pengguna tetap perlu mengesahkan pemasangan sendiri. Semua 14 foto yang digunakan berada dalam folder `images/`.
+Buka `index.html` untuk melihat laman secara tempatan. PWA memerlukan HTTPS atau `localhost` untuk dipasang. Popup tawaran aplikasi muncul selepas laman dibuka dalam pelayar telefon, tablet atau komputer. Panduan iPhone/iPad menggunakan tiga tangkapan skrin sebenar dan teks bahasa Inggeris; butang dalam footer membuka semula panduan. Android dan Chrome/Edge komputer mendapat butang pemasangan apabila pelayar menyokongnya. Pengguna tetap perlu mengesahkan pemasangan sendiri. Semua 14 foto rumah yang digunakan berada dalam folder `images/`.
 
 Nombor WhatsApp pemilik masih kosong dalam `script.js`. Borang menyediakan mesej untuk disalin sehingga nombor sebenar dimasukkan. Maklumat harga, kapasiti dan waktu masuk perlu disahkan oleh pemilik. Peta Google Maps menggunakan carian alamat; pin tepat perlu diperiksa.
 

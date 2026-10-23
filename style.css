@@ -889,7 +889,9 @@ dialog p {
 
 /* Tawaran pemasangan ringkas untuk telefon, tablet dan komputer. */
 .install-dialog {
-  max-width: 470px;
+  max-width: 560px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   text-align: center;
 }
 
@@ -919,6 +921,78 @@ dialog p {
   text-align: left;
 }
 
+/* Langkah Safari disusun seperti kad supaya gambar mudah dibaca di telefon. */
+.guide-note {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.guide-list {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-step {
+  padding: 15px;
+  background: #fbfaf5;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.guide-step-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.guide-step-heading > span {
+  display: grid;
+  flex: 0 0 30px;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.guide-step h3 {
+  margin: 2px 0 4px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.guide-step p {
+  margin-bottom: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.guide-step a,
+.guide-step img {
+  display: block;
+  width: 100%;
+}
+
+.guide-step img {
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.guide-finish {
+  padding: 15px;
+  background: #e8eade;
+  border-radius: 5px;
+  text-align: left;
+}
+
 .install-actions {
   display: flex;
   flex-direction: column;
@@ -933,6 +1007,14 @@ dialog p {
   padding: 8px;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.install-reopen {
+  background: transparent;
+  color: var(--green);
+  border-bottom: 1px solid #aeb5a4;
+  padding: 8px 0;
+  font-size: 12px;
 }
 
 .close-dialog {

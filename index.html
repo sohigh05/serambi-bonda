@@ -15,8 +15,8 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/icon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=5">
+  <script src="script.js?v=5" defer></script>
 </head>
 <body>
   <!-- Skrin pembukaan dan peralihan antara halaman. -->
@@ -97,20 +97,41 @@
     </section>
   </main>
 
-  <footer class="wrap footer"><a class="footer-brand" href="#utama">serambi bonda<span>Rumah yang menyimpan kasih.</span></a><p>Lot 9311A, Kg Ulu Kenderung<br>33300 Gerik, Perak<br><small>© <span id="year"></span> Serambi Bonda</small></p><a href="#hubungi" class="text-link">Mari berkenalan ↗</a></footer>
+  <footer class="wrap footer"><a class="footer-brand" href="#utama">serambi bonda<span>Rumah yang menyimpan kasih.</span></a><p>Lot 9311A, Kg Ulu Kenderung<br>33300 Gerik, Perak<br><small>© <span id="year"></span> Serambi Bonda</small></p><button id="install-reopen" class="install-reopen" type="button">How to install the app ↗</button><a href="#hubungi" class="text-link">Mari berkenalan ↗</a></footer>
   <nav class="mobile-nav" aria-label="Navigasi telefon"><a href="#utama"><span aria-hidden="true">⌂</span>Utama</a><a href="#ruang"><span aria-hidden="true">▦</span>Ruang</a><a href="#aktiviti"><span aria-hidden="true">☼</span>Aktiviti</a><a href="#hubungi"><span aria-hidden="true">✉</span>Hubungi</a></nav>
 
   <!-- Tawaran aplikasi muncul sekali selepas laman dibuka dalam pelayar. -->
-  <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title">
-    <button id="close-install" class="close-dialog" type="button" aria-label="Tutup tawaran aplikasi">×</button>
+  <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title" lang="en">
+    <button id="close-install" class="close-dialog" type="button" aria-label="Close installation guide">×</button>
     <img class="install-icon" src="icons/icon-192.png" alt="">
-    <p class="eyebrow">SERAMBI BONDA DI PERANTI ANDA</p>
-    <h2 id="install-title" tabindex="-1">Bawa serambi bersama.</h2>
-    <p>Buka Serambi Bonda seperti aplikasi, terus dari skrin utama atau komputer anda.</p>
+    <p class="eyebrow">SERAMBI BONDA ON YOUR DEVICE</p>
+    <h2 id="install-title" tabindex="-1">Install Serambi Bonda.</h2>
+    <p id="install-description">Open this website like an app from your Home Screen or computer.</p>
+
+    <!-- Gambar langkah sebenar untuk Safari pada iPhone dan iPad. -->
+    <div id="install-ios-guide" class="install-visual-guide" hidden>
+      <p class="guide-note">Use Safari. If this page opened inside another app, choose Open in Safari first. Tap any screenshot to view it larger.</p>
+      <ol class="guide-list">
+        <li class="guide-step">
+          <div class="guide-step-heading"><span>1</span><div><h3>Open the page menu</h3><p>Tap the menu icon beside the website address. If you already see a Share button, tap that instead.</p></div></div>
+          <a href="images/install-step-1.png" target="_blank" rel="noopener" aria-label="View the Safari page menu screenshot at full size"><img src="images/install-step-1.png" alt="Safari address bar showing the page menu icon" width="1178" height="284"></a>
+        </li>
+        <li class="guide-step">
+          <div class="guide-step-heading"><span>2</span><div><h3>Tap Share</h3><p>Choose Share from the page menu.</p></div></div>
+          <a href="images/install-step-2.png" target="_blank" rel="noopener" aria-label="View the Share menu screenshot at full size"><img src="images/install-step-2.png" alt="Safari page menu with the Share option visible" width="735" height="600" loading="lazy"></a>
+        </li>
+        <li class="guide-step">
+          <div class="guide-step-heading"><span>3</span><div><h3>Add to Home Screen</h3><p>Scroll the Share sheet, then tap Add to Home Screen.</p></div></div>
+          <a href="images/install-step-3.png" target="_blank" rel="noopener" aria-label="View the Add to Home Screen screenshot at full size"><img src="images/install-step-3.png" alt="iPhone Share sheet showing Add to Home Screen" width="1090" height="844" loading="lazy"></a>
+        </li>
+      </ol>
+      <p class="guide-finish">Finally, turn on “Open as Web App” if offered, then tap <strong>Add</strong>.</p>
+    </div>
+
     <p id="install-steps" class="install-steps"></p>
     <div class="install-actions">
-      <button class="button" id="install-button" type="button" hidden>Pasang aplikasi ↗</button>
-      <button class="install-later" id="install-later" type="button">Teruskan ke laman</button>
+      <button class="button" id="install-button" type="button" hidden>Install app ↗</button>
+      <button class="install-later" id="install-later" type="button">Continue to website</button>
     </div>
   </dialog>
 

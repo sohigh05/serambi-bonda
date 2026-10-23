@@ -1,0 +1,9 @@
+# Foto asal kekal di komputer; laman menggunakan salinan dalam images/.
+WhatsApp Image *.jpeg
+
+# Gambar pratonton hanya untuk semakan kerja.
+pratonton*.png
+
+# Fail setempat yang tidak perlu diterbitkan.
+.DS_Store
+Thumbs.db

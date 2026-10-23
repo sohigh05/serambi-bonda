@@ -1,0 +1,1382 @@
+/* 1. WARNA DAN ASAS — ubah pemboleh ubah ini untuk tukar tema. */
+:root {
+  --cream: #f6f3ea;
+  --green: #203d32;
+  --muted: #6c7469;
+  --line: #d9ddcf;
+  --gold: #b88a50;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--green);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+body.transitioning {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button, a, summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, summary {
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+h1 {
+  font-size: clamp(50px, 5.7vw, 88px);
+  margin-bottom: 28px;
+}
+
+h2 {
+  font-size: clamp(32px, 3.2vw, 49px);
+}
+
+em {
+  color: #778666;
+  font-weight: 400;
+}
+
+.wrap {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 64px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.button {
+  display: inline-flex;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  color: white;
+  padding: 17px 25px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .25s, transform .25s;
+}
+
+.button:hover {
+  background: #395747;
+  transform: translateY(-3px);
+}
+
+.button.small {
+  padding: 12px 20px;
+}
+
+.button.light {
+  background: var(--cream);
+  color: var(--green);
+}
+
+.text-link {
+  font-size: 12px;
+  border-bottom: 1px solid #aeb5a4;
+  padding-block: 8px;
+  display: inline-flex;
+  gap: 18px;
+}
+
+
+/* 2. NAVIGASI DESKTOP DAN IDENTITI */
+.announcement {
+  padding: 9px 5%;
+  background: var(--green);
+  color: #eeecdc;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.announcement span {
+  float: right;
+  font-size: 8px;
+}
+
+.header {
+  max-width: 1440px;
+  margin: auto;
+  padding: 24px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+.brand small {
+  display: block;
+  font: 8px Arial, sans-serif;
+  letter-spacing: 2.7px;
+  margin-top: 9px;
+}
+
+.brand-mark {
+  position: relative;
+  font-size: 37px;
+  padding: 5px 9px;
+  border: 1px solid #899980;
+  border-radius: 45% 45% 0 0;
+}
+
+.brand-mark span {
+  position: absolute;
+  font-size: 14px;
+  top: -10px;
+  right: -5px;
+  background: var(--cream);
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 29px;
+  font-size: 12px;
+}
+
+.desktop-nav a {
+  position: relative;
+  padding-block: 8px;
+}
+
+.desktop-nav a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold);
+}
+
+.mobile-nav {
+  display: none;
+}
+
+
+/* 3. HALAMAN UTAMA DAN RUANG GAMBAR */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 70px;
+  padding-top: 66px;
+  padding-bottom: 65px;
+  align-items: center;
+}
+
+.tiny-star {
+  color: var(--gold);
+  font-size: 19px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.intro {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 400px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 33px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 43px;
+}
+
+.hero-note p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero-note strong {
+  font-weight: 400;
+  color: var(--green);
+}
+
+.line-house {
+  font-size: 35px;
+  border-right: 1px solid var(--line);
+  padding-right: 17px;
+  line-height: 1;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.photo-placeholder {
+  position: relative;
+  overflow: hidden;
+  background: #dce1d1;
+  background-image: linear-gradient(135deg, #e7e9dd, #cbd4bd);
+}
+
+.hero-photo {
+  height: 520px;
+  border-radius: 180px 180px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 40px 20px;
+  border: 8px solid #eeeee2;
+  outline: 1px solid #d6daca;
+}
+
+/* Foto sebenar memenuhi bingkai tanpa mengubah nisbah gambar. */
+.hero-photo { padding: 0; border: 8px solid #eeeee2; overflow: hidden; }
+.hero-photo img, .room-photo img, .activity-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-label { position: absolute; left: 18px; bottom: 18px; padding: 8px 12px; background: #203d32dc; color: white; font-size: 9px; letter-spacing: 1.5px; }
+
+.photo-index {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #64785a;
+}
+
+.hero-photo .photo-index {
+  top: 75px;
+  left: 0;
+  right: 0;
+}
+
+.placeholder-caption {
+  position: relative;
+}
+
+.placeholder-caption span, .placeholder-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.placeholder-caption p {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  margin: 9px 0;
+}
+
+.placeholder-caption small {
+  font-size: 10px;
+  color: #65745c;
+}
+
+.photo-corner {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  font-size: 24px;
+}
+
+.round-stamp {
+  position: absolute;
+  top: 34px;
+  right: -26px;
+  width: 107px;
+  height: 107px;
+  border-radius: 50%;
+  background: #ece6d7;
+  outline: 1px dashed #8e997f;
+  outline-offset: -7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  transform: rotate(12deg);
+}
+
+.round-stamp span {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  height: 24px;
+}
+
+.visual-caption {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  margin-top: 19px;
+  color: var(--muted);
+}
+
+/* Rumah garisan CSS ialah hiasan placeholder, bukan gambar rumah sebenar. */
+.house-drawing {
+  width: 220px;
+  margin: 0 auto 54px;
+  opacity: .47;
+}
+
+.roof {
+  width: 158px;
+  height: 80px;
+  border-top: 2px solid #637858;
+  border-left: 2px solid #637858;
+  transform: rotate(30deg) skewX(-30deg);
+  margin: 0 auto -26px;
+}
+
+.house-body {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  border: 2px solid #637858;
+  background: #d7dfcc;
+}
+
+.house-body i {
+  display: block;
+  height: 33px;
+  width: 33px;
+  border: 1px solid #637858;
+  background: linear-gradient(90deg, transparent 48%, #637858 49%, #637858 51%, transparent 52%);
+}
+
+.house-body b {
+  width: 37px;
+  height: 68px;
+  border: 1px solid #637858;
+  align-self: flex-end;
+}
+
+.steps {
+  width: 90px;
+  height: 17px;
+  border: 1px solid #637858;
+  border-top: 0;
+  margin: auto;
+}
+
+.values-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 25px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+.values-strip i {
+  color: #9ca989;
+  font-size: 22px;
+  font-style: normal;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  padding-top: 100px;
+  padding-bottom: 95px;
+}
+
+.story-copy p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.signature {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  display: block;
+  margin: 26px 0 12px;
+}
+
+.draft-note {
+  color: var(--muted);
+  display: block;
+  font-size: 10px;
+  margin-top: 15px;
+}
+
+.invitation {
+  position: relative;
+  background: var(--green);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: var(--cream);
+  overflow: hidden;
+  max-width: 1192px;
+}
+
+.invitation h2 {
+  margin: 20px 0 30px;
+  font-size: 55px;
+}
+
+.invitation em {
+  color: #bac6a5;
+}
+
+.invitation-flower {
+  position: absolute;
+  font-size: 300px;
+  right: 85px;
+  top: -35px;
+  color: #95a77d;
+  opacity: .28;
+  animation: turn 60s linear infinite;
+  pointer-events: none;
+}
+
+
+/* 4. HALAMAN DALAMAN */
+.inner-page {
+  padding-top: 65px;
+  padding-bottom: 40px;
+}
+
+.page-heading {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.page-heading h1 {
+  font-size: clamp(48px, 5vw, 72px);
+}
+
+.page-heading > p {
+  color: var(--muted);
+  max-width: 360px;
+}
+
+.notice {
+  font-size: 11px;
+  padding: 13px 18px;
+  border-left: 2px solid var(--gold);
+  background: #edece0;
+  margin: 22px 0 38px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.room-card.wide {
+  grid-column: 1 / -1;
+}
+
+.room-photo {
+  height: 300px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.room-photo, .activity-photo { overflow: hidden; background: #dce1d1; }
+.room-photo img, .activity-photo img { transition: transform .4s ease; }
+.room-photo:hover img, .activity-photo:hover img { transform: scale(1.03); }
+
+/* Galeri semua foto: empat lajur pada desktop, dua pada telefon. */
+.gallery-section { padding: 72px 0 10px; }
+.gallery-section h2 { margin-bottom: 12px; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
+.gallery-item { padding: 0; text-align: left; background: transparent; color: var(--green); }
+.gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.gallery-item span { display: block; padding-top: 8px; font-size: 12px; }
+.gallery-item:hover img { filter: brightness(.9); }
+.photo-dialog { width: min(900px, calc(100% - 24px)); max-width: 900px; padding: 16px; }
+.photo-dialog img { display: block; max-width: 100%; max-height: 75dvh; margin: auto; object-fit: contain; }
+.photo-dialog p { margin: 12px 4px 0; font-size: 13px; }
+.field-note { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+
+.wide .room-photo {
+  height: 390px;
+}
+
+.placeholder-symbol {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 88px;
+  font-weight: 400;
+  color: #7f9072;
+  line-height: 1.4;
+}
+
+.placeholder-label {
+  display: block;
+  color: #56664b;
+  margin-top: 16px;
+}
+
+.clay {
+  background: linear-gradient(135deg, #e8dfcf, #d8c7af);
+}
+
+.sage {
+  background: linear-gradient(135deg, #dae1d5, #b7c9b3);
+}
+
+.room-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+}
+
+.room-info h2 {
+  font-size: 28px;
+  letter-spacing: -.6px;
+  margin-bottom: 10px;
+}
+
+.room-info p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.room-info > span {
+  color: #9ba68d;
+  font: italic 24px Georgia, serif;
+}
+
+.amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-block: 80px;
+}
+
+.amenities ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.amenities li {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  font-size: 11px;
+  color: #7a876c;
+}
+
+.amenities li span {
+  font-size: 15px;
+  color: var(--green);
+}
+
+.bottom-cta {
+  border-top: 1px solid var(--line);
+  padding-block: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bottom-cta p {
+  margin: 0;
+  font: 26px Georgia, serif;
+}
+
+.activity-list article {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 65px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.activity-list article:nth-child(even) .activity-photo {
+  order: 2;
+}
+
+.activity-photo {
+  height: 340px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.activity-list h2 {
+  margin-bottom: 20px;
+}
+
+.activity-list p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid #cdd4c3;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 10px;
+}
+
+
+/* 5. BORANG, DIALOG DAN SOALAN LAZIM */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.contact-details h2 {
+  font-size: 38px;
+}
+
+.contact-rule {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.contact-rule span {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.contact-rule p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.contact-details address {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.map-panel {
+  margin-top: 30px;
+  background: #e4e7da;
+  padding: 8px;
+  border: 1px solid var(--line);
+}
+
+.map-panel iframe {
+  display: block;
+  width: 100%;
+  height: 250px;
+  border: 0;
+  background: #dce1d1;
+}
+
+.map-link {
+  display: block;
+  padding: 12px 8px 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.booking-form {
+  background: #edeedf;
+  padding: 35px;
+  border-radius: 8px;
+}
+
+.form-title {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-title h2 {
+  font-size: 29px;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.form-title > span {
+  font-size: 25px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+
+label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+input, select, textarea {
+  width: 100%;
+  min-width: 0;
+  color: var(--green);
+  border: 1px solid #ced3c4;
+  border-radius: 4px;
+  background: #fbfaf5;
+  padding: 12px;
+  font-size: 13px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #849477;
+  outline-offset: 1px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.booking-form > .button {
+  width: 100%;
+  margin-top: 23px;
+}
+
+#form-status, #copy-status {
+  font-size: 12px;
+  margin: 12px 0 0;
+}
+
+.faq {
+  max-width: 780px;
+  margin: 90px auto 20px;
+}
+
+.faq h2 {
+  font-size: 38px;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+summary {
+  font-size: 14px;
+}
+
+details p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+dialog {
+  max-width: 560px;
+  width: calc(100% - 32px);
+  max-height: 90dvh;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--green);
+  padding: 35px;
+}
+
+dialog::backdrop {
+  background: #15291f99;
+  backdrop-filter: blur(5px);
+}
+
+dialog h2 {
+  font-size: 36px;
+}
+
+dialog p {
+  font-size: 13px;
+}
+
+.close-dialog {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  background: transparent;
+  color: var(--green);
+  font-size: 28px;
+  padding: 0 10px;
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+
+/* 6. FOOTER, LOADING DAN ANIMASI */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 42px;
+}
+
+.footer-brand {
+  font: 26px Georgia, serif;
+}
+
+.footer-brand span {
+  display: block;
+  font: 11px Arial, sans-serif;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.footer p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.footer small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--green);
+  color: var(--cream);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.curtain-mark {
+  font: italic 90px Georgia, serif;
+}
+
+.curtain p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.loading-line {
+  width: 170px;
+  height: 2px;
+  background: #6f8266;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #e1d9b8;
+  transform-origin: left;
+  animation: loading 2s ease-in-out forwards;
+}
+
+.page:not([hidden]) {
+  animation: arrive .6s ease-out;
+}
+
+.noscript-note {
+  padding: 20px;
+  background: #ece2c8;
+  text-align: center;
+}
+
+@keyframes loading {
+  from {
+  transform: scaleX(0);
+}
+ to {
+  transform: scaleX(1);
+}
+
+}
+
+@keyframes arrive {
+  from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+ to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+}
+
+@keyframes turn {
+  to {
+  transform: rotate(360deg);
+}
+
+}
+
+
+/* 7. TABLET / IPAD — dua kolum dikekalkan dengan ruang lebih padat. */
+@media (max-width: 1100px) {
+  .wrap {
+  padding-inline: 36px;
+}
+
+  .header {
+  padding-inline: 36px;
+}
+
+  .header-cta {
+  display: none;
+}
+
+  .hero {
+  gap: 38px;
+  padding-top: 50px;
+}
+
+  .hero-photo {
+  height: 475px;
+}
+
+  .round-stamp {
+  right: -14px;
+  width: 90px;
+  height: 90px;
+}
+
+  .hero-actions {
+  gap: 15px;
+}
+
+  .story, .contact-grid {
+  gap: 40px;
+}
+
+  .page-heading {
+  gap: 35px;
+}
+
+  .invitation {
+  margin-inline: 36px;
+}
+
+  .values-strip {
+  font-size: 15px;
+  gap: 12px;
+}
+
+  .values-strip span:last-child, .values-strip i:last-of-type {
+  display: none;
+}
+
+  .activity-list article {
+  gap: 35px;
+}
+
+  .booking-form {
+  padding: 25px;
+}
+
+  .form-row {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+}
+
+
+/* 8. TELEFON — navigasi bawah seperti aplikasi dan butang mudah ditekan. */
+@media (max-width: 700px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .gallery-item span { font-size: 11px; }
+  body {
+  padding-bottom: calc(78px + env(safe-area-inset-bottom));
+}
+
+  .wrap {
+  padding-inline: 24px;
+}
+
+  .announcement {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  padding: 9px;
+}
+
+  .announcement span {
+  display: none;
+}
+
+  .header {
+  padding: 18px 24px;
+}
+
+  .brand {
+  font-size: 21px;
+}
+
+  .brand-mark {
+  font-size: 29px;
+}
+
+  .brand small {
+  font-size: 7px;
+}
+
+  .desktop-nav {
+  display: none;
+}
+
+  .header-cta {
+  display: inline-flex;
+  font-size: 10px;
+  padding: 10px 12px !important;
+  gap: 8px;
+}
+
+  .header-cta span {
+  display: none;
+}
+
+  .mobile-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: #f8f7f0f5;
+  backdrop-filter: blur(15px);
+  border-top: 1px solid var(--line);
+  padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+}
+
+  .mobile-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  padding: 3px;
+  border-radius: 9px;
+  min-height: 48px;
+  color: var(--muted);
+}
+
+  .mobile-nav a > span {
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+  .mobile-nav a[aria-current="page"] {
+  color: var(--green);
+  background: #e6eadd;
+}
+
+  .hero {
+  grid-template-columns: 1fr;
+  padding-top: 35px;
+  gap: 33px;
+  padding-bottom: 33px;
+}
+
+  .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+  h1 {
+  font-size: clamp(48px, 12vw, 70px);
+  letter-spacing: -2px;
+}
+
+  .intro {
+  font-size: 13px;
+}
+
+  .hero-actions {
+  margin-top: 24px;
+}
+
+  .button {
+  padding: 15px 19px;
+  min-height: 46px;
+}
+
+  .hero-note {
+  margin-top: 27px;
+}
+
+  .hero-photo {
+  height: 410px;
+  border-radius: 150px 150px 5px 5px;
+}
+
+  .house-drawing {
+  transform: scale(.85);
+  margin-bottom: 30px;
+}
+
+  .hero-photo .photo-index {
+  top: 48px;
+}
+
+  .round-stamp {
+  right: -8px;
+  top: 18px;
+}
+
+  .placeholder-caption p {
+  font-size: 19px;
+}
+
+  .visual-caption {
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+  .values-strip {
+  font-size: 14px;
+  padding: 18px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+  .values-strip span:nth-of-type(3), .values-strip i:nth-of-type(2) {
+  display: none;
+}
+
+  .story {
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding-block: 50px;
+}
+
+  .story h2 {
+  font-size: 39px;
+}
+
+  .invitation {
+  margin-inline: 16px;
+  padding: 35px 25px;
+}
+
+  .invitation h2 {
+  font-size: 44px;
+}
+
+  .invitation-flower {
+  font-size: 220px;
+  right: -80px;
+  top: 0;
+}
+
+  .invitation .button {
+  position: relative;
+  z-index: 1;
+}
+
+  .inner-page {
+  padding-top: 35px;
+}
+
+  .page-heading {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+  .page-heading h1 {
+  font-size: 48px;
+}
+
+  .page-heading > p {
+  font-size: 13px;
+}
+
+  .notice {
+  font-size: 10px;
+}
+
+  .room-grid {
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+  .room-card.wide {
+  grid-column: auto;
+}
+
+  .room-photo, .wide .room-photo {
+  height: 260px;
+}
+
+  .room-info h2 {
+  font-size: 26px;
+}
+
+  .amenities {
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-block: 45px;
+}
+
+  .bottom-cta {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+  .activity-list article {
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+
+  .activity-list article:nth-child(even) .activity-photo {
+  order: 0;
+}
+
+  .activity-photo {
+  height: 260px;
+}
+
+  .contact-grid {
+  grid-template-columns: 1fr;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+  .booking-form {
+  padding: 22px;
+  order: -1;
+}
+
+  .faq {
+  margin-top: 50px;
+}
+
+  .footer {
+  flex-wrap: wrap;
+  padding-top: 35px;
+  gap: 25px;
+}
+
+  .footer .text-link {
+  display: none;
+}
+
+  .footer-brand {
+  font-size: 24px;
+}
+
+  dialog {
+  padding: 28px 22px;
+}
+
+}
+
+/* Hormati pengguna yang memilih pergerakan minimum. Tempoh peralihan tetap 2 saat. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+  scroll-behavior: auto;
+}
+
+  *, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+}

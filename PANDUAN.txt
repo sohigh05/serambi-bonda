@@ -1,0 +1,60 @@
+SERAMBI BONDA — PANDUAN LAMAN
+
+CARA BUKA
+Klik dua kali index.html. Tiada pemasangan atau akaun diperlukan.
+Internet diperlukan untuk paparan Google Maps dan membuka WhatsApp.
+Empat halaman menggunakan pautan #utama, #ruang, #aktiviti dan #hubungi.
+
+CARA PASANG KE SKRIN UTAMA (PWA)
+Terbitkan semua fail dan folder di hosting yang menggunakan HTTPS.
+Buka laman tersebut di telefon dan pilih "Add to Home Screen" / "Tambah ke
+Skrin Utama" daripada menu pelayar. PWA juga boleh diuji di localhost.
+Membuka index.html terus sebagai fail tempatan tidak mengaktifkan PWA.
+Halaman dan foto boleh dibuka offline selepas lawatan pertama; peta Google
+Maps dan WhatsApp tetap memerlukan internet.
+
+SUSUNAN FAIL
+index.html — teks, borang, ruang gambar dan susunan halaman.
+style.css — warna, saiz, animasi dan susun atur telefon / iPad / desktop.
+script.js — loading, navigasi, semakan tarikh dan mesej WhatsApp.
+manifest.webmanifest — nama, warna dan ikon aplikasi.
+service-worker.js — simpan fail laman untuk kegunaan offline.
+images/ — salinan 14 foto yang diberi, dengan nama fail ringkas.
+icons/ — ikon 192px dan 512px untuk skrin utama.
+
+WHATSAPP
+Di bahagian paling atas script.js, isi nomborWhatsApp dengan nombor sebenar.
+Gunakan kod negara, tanpa + atau ruang. Untuk Malaysia: 60 dan nombor
+telefon tanpa sifar awal. Jika kosong, pengguna hanya boleh pratonton dan
+salin mesej. Selepas nombor diisi, butang Buka WhatsApp muncul dalam dialog.
+Mesej hanya dihantar apabila pengguna sendiri menghantarnya di WhatsApp.
+Tiada sistem semakan kekosongan sebenar, pangkalan data atau pembayaran.
+
+GAMBAR
+Semua 14 foto yang dikongsi kini dipaparkan dalam galeri Ruang Rumah.
+Kapsyen galeri disimpan dalam senarai tajukFoto di script.js. Gambar utama
+dan gambar pilihan lain ditetapkan dalam index.html. Simpan fail gambar di
+folder images supaya pautan gambar tidak rosak selepas diterbitkan.
+
+BUTIRAN SEBELUM PENERBITAN UMUM
+Alamat Lot 9311A, Kg Ulu Kenderung, 33300 Gerik, Perak telah dimasukkan.
+Peta Google Maps mencari alamat itu. Pin tepat belum dapat disahkan; pemilik
+perlu menyemaknya di lokasi dan menggantikan pautan jika perlu.
+Masukkan nombor WhatsApp sebenar supaya butang terus kepada pemilik aktif.
+Tambah kapasiti, kemudahan, waktu dan harga yang disahkan apabila ada.
+Laman sekarang tidak mendakwa sebarang butiran tersebut sebagai fakta.
+Nama Serambi Bonda ialah cadangan kreatif dan belum disemak pendaftarannya.
+
+ANIMASI
+Pembukaan dan peralihan halaman mengambil 2 saat (masaPeralihan = 2000).
+Navigasi dalam halaman yang sama tidak mengulang loading.
+Tetapan reduced motion peranti menghentikan gerakan hiasan; tempoh 2 saat
+dikekalkan. Telefon menggunakan navigasi bawah. Tablet menggunakan dua
+kolum; telefon menggunakan satu kolum. Ini laman responsif, bukan aplikasi
+yang boleh dipasang dari app store.
+
+PRIVASI DAN KEGUNAAN
+Borang tidak menyimpan data atau menghantar data ke pelayan. Draf mesej
+dibina dalam browser. Apabila pautan WhatsApp dibuka, mesej dipindahkan
+ke WhatsApp. Google Maps memerlukan internet dan memuatkan kandungan Google
+dalam iframe. Tiada servis luar lain atau font luar digunakan.

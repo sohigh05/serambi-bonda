@@ -198,6 +198,65 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+/* 8. PEMASANGAN — pengguna sendiri perlu mengesahkan pemasangan di telefon. */
+const installCard = document.getElementById('install-card');
+const installButton = document.getElementById('install-button');
+const installSteps = document.getElementById('install-steps');
+let installPrompt = null;
+
+function sudahDipasang() {
+  return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+}
+
+function paparPilihanPasang() {
+  const telefonApple = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const telefonAndroid = /Android/i.test(navigator.userAgent);
+  const lamanSelamat = location.protocol === 'https:' || location.hostname === 'localhost';
+
+  if (!lamanSelamat || sudahDipasang() || (!telefonApple && !telefonAndroid)) {
+    installCard.hidden = true;
+    return;
+  }
+
+  installCard.hidden = false;
+  installButton.hidden = !installPrompt;
+  installSteps.hidden = !!installPrompt;
+
+  if (telefonApple) {
+    installSteps.textContent = 'Di iPhone atau iPad: buka dalam Safari, tekan Kongsi, kemudian pilih Tambah ke Skrin Utama.';
+  } else {
+    installSteps.textContent = 'Di Android: buka menu pelayar dan pilih Pasang aplikasi atau Tambah ke skrin utama.';
+  }
+}
+
+window.addEventListener('beforeinstallprompt', function (event) {
+  event.preventDefault();
+  installPrompt = event;
+  paparPilihanPasang();
+});
+
+installButton.addEventListener('click', async function () {
+  if (!installPrompt) return;
+  const prompt = installPrompt;
+  installPrompt = null;
+  installButton.hidden = true;
+  try {
+    await prompt.prompt();
+    await prompt.userChoice;
+  } catch (error) {
+    console.warn('Pilihan pemasangan tidak tersedia:', error);
+  }
+  paparPilihanPasang();
+});
+
+window.addEventListener('appinstalled', function () {
+  installPrompt = null;
+  installCard.hidden = true;
+});
+
+paparPilihanPasang();
+
 document.getElementById('close-dialog').addEventListener('click', function () {
   dialog.close();
 });

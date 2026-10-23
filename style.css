@@ -58,6 +58,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   outline-offset: 5px;
 }
 
+/* Tajuk menerima fokus untuk pembaca skrin, tetapi bukan kawalan interaktif. */
+h1[tabindex="-1"]:focus {
+  outline: none;
+}
+
 h1, h2, p {
   margin-top: 0;
 }
@@ -219,6 +224,35 @@ em {
 
 .mobile-nav {
   display: none;
+}
+
+/* Kad ringkas ini hanya dipaparkan apabila pemasangan PWA disokong. */
+.install-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.install-card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.install-card h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.install-card p {
+  margin-bottom: 0;
+}
+
+.install-steps {
+  max-width: 310px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 
@@ -1079,6 +1113,15 @@ dialog p {
 
 /* 8. TELEFON — navigasi bawah seperti aplikasi dan butang mudah ditekan. */
 @media (max-width: 700px) {
+  .install-card {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .install-card h2 {
+    font-size: 27px;
+  }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .gallery-item span { font-size: 11px; }
   body {

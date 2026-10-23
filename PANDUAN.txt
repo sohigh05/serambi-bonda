@@ -7,8 +7,11 @@ Empat halaman menggunakan pautan #utama, #ruang, #aktiviti dan #hubungi.
 
 CARA PASANG KE SKRIN UTAMA (PWA)
 Terbitkan semua fail dan folder di hosting yang menggunakan HTTPS.
-Buka laman tersebut di telefon dan pilih "Add to Home Screen" / "Tambah ke
-Skrin Utama" daripada menu pelayar. PWA juga boleh diuji di localhost.
+Buka laman tersebut di telefon. Pada Android, tekan butang "Tambah ke skrin
+utama" jika muncul, atau pilih "Pasang aplikasi" dalam menu pelayar. Pada
+iPhone atau iPad, buka dalam Safari, tekan Kongsi dan pilih "Tambah ke Skrin
+Utama". Pemasangan memerlukan tindakan pengguna; laman tidak boleh memasang
+dirinya sendiri secara automatik. PWA juga boleh diuji di localhost.
 Membuka index.html terus sebagai fail tempatan tidak mengaktifkan PWA.
 Halaman dan foto boleh dibuka offline selepas lawatan pertama; peta Google
 Maps dan WhatsApp tetap memerlukan internet.

@@ -1,9 +1,10 @@
 /* Fail ini menyimpan halaman dan foto supaya PWA boleh dibuka semasa offline.
    Tukar nombor versi apabila kandungan laman dikemas kini. */
-const CACHE_NAME = 'serambi-bonda-v1';
+const CACHE_NAME = 'serambi-bonda-v2';
 const LOCAL_FILES = [
   './', './index.html', './style.css', './script.js',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
+  './icons/apple-touch-icon.png',
   './images/foto-01.jpg', './images/foto-02.jpg', './images/foto-03.jpg',
   './images/foto-04.jpg', './images/foto-05.jpg', './images/foto-06.jpg',
   './images/foto-07.jpg', './images/foto-08.jpg', './images/foto-09.jpg',
@@ -25,7 +26,7 @@ self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (names) {
       return Promise.all(names.filter(function (name) {
-        return name !== CACHE_NAME;
+        return name.startsWith('serambi-bonda-') && name !== CACHE_NAME;
       }).map(function (name) {
         return caches.delete(name);
       }));

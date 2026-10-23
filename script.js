@@ -73,6 +73,7 @@ function tukarHalaman(id, pembukaan = false) {
     document.body.classList.remove('transitioning');
     main.removeAttribute('aria-busy');
     if (window.location.hash === '#kisah') document.getElementById('kisah').scrollIntoView();
+    if (pembukaan) setTimeout(bukaTawaranPasang, 250);
   }, masaPeralihan);
 }
 
@@ -198,8 +199,8 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-/* 8. PEMASANGAN — pengguna sendiri perlu mengesahkan pemasangan di telefon. */
-const installCard = document.getElementById('install-card');
+/* 8. PEMASANGAN — popup menawarkan aplikasi, tetapi pengguna tetap memilih sendiri. */
+const installDialog = document.getElementById('install-dialog');
 const installButton = document.getElementById('install-button');
 const installSteps = document.getElementById('install-steps');
 let installPrompt = null;
@@ -208,54 +209,65 @@ function sudahDipasang() {
   return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 }
 
-function paparPilihanPasang() {
+function kemasKiniTawaranPasang() {
   const telefonApple = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const telefonAndroid = /Android/i.test(navigator.userAgent);
-  const lamanSelamat = location.protocol === 'https:' || location.hostname === 'localhost';
-
-  if (!lamanSelamat || sudahDipasang() || (!telefonApple && !telefonAndroid)) {
-    installCard.hidden = true;
-    return;
-  }
-
-  installCard.hidden = false;
+  const safariMac = /Macintosh/.test(navigator.userAgent) &&
+    /Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg/.test(navigator.userAgent);
   installButton.hidden = !installPrompt;
-  installSteps.hidden = !!installPrompt;
 
   if (telefonApple) {
-    installSteps.textContent = 'Di iPhone atau iPad: buka dalam Safari, tekan Kongsi, kemudian pilih Tambah ke Skrin Utama.';
+    installSteps.textContent = 'iPhone / iPad: buka dalam Safari, tekan Kongsi → Tambah ke Skrin Utama → Tambah.';
+  } else if (telefonAndroid) {
+    installSteps.textContent = 'Android: jika butang Pasang aplikasi muncul, tekan. Jika tiada, buka dalam Chrome dan pilih Pasang aplikasi melalui menu pelayar.';
+  } else if (safariMac) {
+    installSteps.textContent = 'Mac Safari: tekan Kongsi → Tambah ke Dock, kemudian pilih Tambah.';
   } else {
-    installSteps.textContent = 'Di Android: buka menu pelayar dan pilih Pasang aplikasi atau Tambah ke skrin utama.';
+    installSteps.textContent = 'Komputer: jika butang Pasang aplikasi muncul, tekan. Jika tiada, buka dalam Chrome atau Edge dan pilih Pasang melalui bar alamat atau menu pelayar.';
   }
+}
+
+function bukaTawaranPasang() {
+  const lamanSelamat = location.protocol === 'https:' || location.hostname === 'localhost';
+  if (!lamanSelamat || sudahDipasang() || installDialog.open) return;
+  kemasKiniTawaranPasang();
+  installDialog.showModal();
+  document.getElementById('install-title').focus({ preventScroll: true });
 }
 
 window.addEventListener('beforeinstallprompt', function (event) {
   event.preventDefault();
   installPrompt = event;
-  paparPilihanPasang();
+  kemasKiniTawaranPasang();
 });
 
 installButton.addEventListener('click', async function () {
   if (!installPrompt) return;
   const prompt = installPrompt;
   installPrompt = null;
-  installButton.hidden = true;
+  installDialog.close();
   try {
     await prompt.prompt();
     await prompt.userChoice;
   } catch (error) {
     console.warn('Pilihan pemasangan tidak tersedia:', error);
   }
-  paparPilihanPasang();
+  kemasKiniTawaranPasang();
 });
 
 window.addEventListener('appinstalled', function () {
   installPrompt = null;
-  installCard.hidden = true;
+  if (installDialog.open) installDialog.close();
 });
 
-paparPilihanPasang();
+document.getElementById('close-install').addEventListener('click', function () {
+  installDialog.close();
+});
+
+document.getElementById('install-later').addEventListener('click', function () {
+  installDialog.close();
+});
 
 document.getElementById('close-dialog').addEventListener('click', function () {
   dialog.close();

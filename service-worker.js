@@ -1,6 +1,6 @@
 /* Fail ini menyimpan halaman dan foto supaya PWA boleh dibuka semasa offline.
    Tukar nombor versi apabila kandungan laman dikemas kini. */
-const CACHE_NAME = 'serambi-bonda-v2';
+const CACHE_NAME = 'serambi-bonda-v3';
 const LOCAL_FILES = [
   './', './index.html', './style.css', './script.js',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',

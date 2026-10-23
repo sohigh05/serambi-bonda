@@ -63,6 +63,10 @@ h1[tabindex="-1"]:focus {
   outline: none;
 }
 
+.install-dialog h2[tabindex="-1"]:focus {
+  outline: none;
+}
+
 h1, h2, p {
   margin-top: 0;
 }
@@ -225,36 +229,6 @@ em {
 .mobile-nav {
   display: none;
 }
-
-/* Kad ringkas ini hanya dipaparkan apabila pemasangan PWA disokong. */
-.install-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding-block: 34px;
-  border-bottom: 1px solid var(--line);
-}
-
-.install-card .eyebrow {
-  margin-bottom: 10px;
-}
-
-.install-card h2 {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.install-card p {
-  margin-bottom: 0;
-}
-
-.install-steps {
-  max-width: 310px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
 
 /* 3. HALAMAN UTAMA DAN RUANG GAMBAR */
 .hero {
@@ -913,6 +887,54 @@ dialog p {
   font-size: 13px;
 }
 
+/* Tawaran pemasangan ringkas untuk telefon, tablet dan komputer. */
+.install-dialog {
+  max-width: 470px;
+  text-align: center;
+}
+
+.install-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  border-radius: 18px;
+}
+
+.install-dialog .eyebrow {
+  margin-bottom: 12px;
+}
+
+.install-dialog h2 {
+  margin-bottom: 16px;
+}
+
+.install-steps {
+  margin: 20px 0 0;
+  padding: 15px;
+  background: #e8eade;
+  border-radius: 5px;
+  color: var(--green);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.install-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 23px;
+}
+
+.install-later {
+  background: transparent;
+  color: var(--green);
+  padding: 8px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .close-dialog {
   position: absolute;
   top: 10px;
@@ -1113,15 +1135,6 @@ dialog p {
 
 /* 8. TELEFON — navigasi bawah seperti aplikasi dan butang mudah ditekan. */
 @media (max-width: 700px) {
-  .install-card {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .install-card h2 {
-    font-size: 27px;
-  }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .gallery-item span { font-size: 11px; }
   body {

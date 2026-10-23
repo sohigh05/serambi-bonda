@@ -50,16 +50,6 @@
         </div>
       </div>
       <div class="values-strip"><span>Ruang untuk bersama</span><i>✳</i><span>Tenang cara kampung</span><i>✳</i><span>Hangat seperti di rumah</span><i>✳</i><span>Kenangan yang tinggal</span></div>
-      <!-- Panduan pemasangan hanya muncul dalam pelayar telefon yang sesuai. -->
-      <aside class="install-card wrap" id="install-card" aria-labelledby="install-title" hidden>
-        <div>
-          <p class="eyebrow">SERAMBI BONDA DI TELEFON</p>
-          <h2 id="install-title">Bawa serambi bersama.</h2>
-          <p id="install-description">Pasang laman ini di skrin utama untuk membukanya seperti aplikasi.</p>
-        </div>
-        <button class="button" id="install-button" type="button" hidden>Tambah ke skrin utama ↗</button>
-        <p class="install-steps" id="install-steps" hidden></p>
-      </aside>
       <section class="story wrap" id="kisah">
         <div><p class="eyebrow">01 — CERITA DI SEBALIK SERAMBI</p><h2>Dahulu rumah mak.<br>Kini, ruang <em>kita.</em></h2></div>
         <div class="story-copy"><p>Rumah ini bermula dengan kasih seorang ibu. Selepas pemergian arwah mak, keluarga berhasrat untuk meneruskan kehangatannya dengan membuka pintu ini kepada tetamu.</p><p>Nama Serambi Bonda membawa ingatan itu — tempat menyambut, bercerita dan meluangkan masa bersama. Semoga setiap yang singgah dapat membawa pulang sedikit rasa tenangnya.</p><span class="signature">Dengan kasih, keluarga Serambi Bonda</span></div>
@@ -109,6 +99,20 @@
 
   <footer class="wrap footer"><a class="footer-brand" href="#utama">serambi bonda<span>Rumah yang menyimpan kasih.</span></a><p>Lot 9311A, Kg Ulu Kenderung<br>33300 Gerik, Perak<br><small>© <span id="year"></span> Serambi Bonda</small></p><a href="#hubungi" class="text-link">Mari berkenalan ↗</a></footer>
   <nav class="mobile-nav" aria-label="Navigasi telefon"><a href="#utama"><span aria-hidden="true">⌂</span>Utama</a><a href="#ruang"><span aria-hidden="true">▦</span>Ruang</a><a href="#aktiviti"><span aria-hidden="true">☼</span>Aktiviti</a><a href="#hubungi"><span aria-hidden="true">✉</span>Hubungi</a></nav>
+
+  <!-- Tawaran aplikasi muncul sekali selepas laman dibuka dalam pelayar. -->
+  <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title">
+    <button id="close-install" class="close-dialog" type="button" aria-label="Tutup tawaran aplikasi">×</button>
+    <img class="install-icon" src="icons/icon-192.png" alt="">
+    <p class="eyebrow">SERAMBI BONDA DI PERANTI ANDA</p>
+    <h2 id="install-title" tabindex="-1">Bawa serambi bersama.</h2>
+    <p>Buka Serambi Bonda seperti aplikasi, terus dari skrin utama atau komputer anda.</p>
+    <p id="install-steps" class="install-steps"></p>
+    <div class="install-actions">
+      <button class="button" id="install-button" type="button" hidden>Pasang aplikasi ↗</button>
+      <button class="install-later" id="install-later" type="button">Teruskan ke laman</button>
+    </div>
+  </dialog>
 
   <!-- Dialog membolehkan mesej disemak sebelum membuka WhatsApp. -->
   <dialog id="message-dialog"><button id="close-dialog" class="close-dialog" aria-label="Tutup pratonton">×</button><p class="eyebrow">SATU LANGKAH LAGI</p><h2>Mesej untuk Bonda.</h2><p id="whatsapp-hint">Nombor pemilik belum diisi. Anda boleh salin draf mesej ini dahulu.</p><label for="message-preview">Pratonton mesej</label><textarea id="message-preview" rows="9" readonly></textarea><div class="dialog-actions"><button id="copy-message" class="button" type="button">Salin mesej</button><a id="whatsapp-link" class="button" target="_blank" rel="noopener noreferrer" hidden>Buka WhatsApp ↗</a></div><p id="copy-status" role="status"></p></dialog>

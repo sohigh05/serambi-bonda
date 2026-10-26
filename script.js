@@ -128,7 +128,28 @@ document.getElementById('close-photo').addEventListener('click', function () {
   photoDialog.close();
 });
 
-/* 5. TARIKH — guna tarikh tempatan, bukan tarikh UTC. */
+/* 5. VIDEO RUMAH — mula bermain apabila video sudah kelihatan.
+   Cara ini mengurangkan penggunaan data semasa halaman baru dibuka. */
+const houseVideo = document.getElementById('house-video');
+const kurangkanGerakan = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if ('IntersectionObserver' in window && !kurangkanGerakan) {
+  const videoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        houseVideo.play().catch(function () {
+          // Pelayar tertentu memerlukan pengguna menekan butang main sendiri.
+        });
+      } else {
+        houseVideo.pause();
+      }
+    });
+  }, { threshold: 0.45 });
+
+  videoObserver.observe(houseVideo);
+}
+
+/* 6. TARIKH — guna tarikh tempatan, bukan tarikh UTC. */
 function tarikhInput(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -158,7 +179,7 @@ function tarikhCantik(value) {
   });
 }
 
-/* 6. SEDIAKAN MESEJ — tiada tempahan atau pembayaran dihantar automatik. */
+/* 7. SEDIAKAN MESEJ — tiada tempahan atau pembayaran dihantar automatik. */
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   kemasKiniTarikh();
@@ -190,7 +211,7 @@ form.addEventListener('submit', function (event) {
   dialog.showModal();
 });
 
-/* 7. PWA — service worker berfungsi di HTTPS atau localhost sahaja. */
+/* 8. PWA — service worker berfungsi di HTTPS atau localhost sahaja. */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('./service-worker.js').catch(function (error) {
@@ -199,7 +220,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-/* 8. PEMASANGAN — popup menawarkan aplikasi, tetapi pengguna tetap memilih sendiri. */
+/* 9. PEMASANGAN — popup menawarkan aplikasi, tetapi pengguna tetap memilih sendiri. */
 const installDialog = document.getElementById('install-dialog');
 const installButton = document.getElementById('install-button');
 const installSteps = document.getElementById('install-steps');

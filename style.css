@@ -459,6 +459,100 @@ em {
   font-style: normal;
 }
 
+/* Video rumah diletakkan seperti sebuah tayangan ringkas, bukan sekadar fail media. */
+.video-showcase {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 72px;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding-block: 62px;
+  padding-inline: 54px;
+  color: var(--cream);
+  background: var(--green);
+  border-radius: 8px;
+}
+
+.video-copy {
+  min-width: 0;
+}
+
+.video-copy h2 {
+  margin-bottom: 24px;
+}
+
+.video-copy > p:not(.eyebrow) {
+  max-width: 430px;
+  color: #d8dfd8;
+}
+
+.video-detail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-block: 24px;
+  margin-block: 26px;
+  border-top: 1px solid #ffffff30;
+  border-bottom: 1px solid #ffffff30;
+}
+
+.video-detail > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  color: var(--green);
+  background: var(--cream);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.video-detail p {
+  margin: 0;
+  color: #d8dfd8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.video-detail strong {
+  color: white;
+  font-weight: 600;
+}
+
+.video-frame {
+  position: relative;
+  min-width: 0;
+  padding: 9px;
+  background: #eee9dc;
+  border-radius: 5px;
+  box-shadow: 0 28px 70px #081a1438;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #101a16;
+  border-radius: 2px;
+}
+
+.video-label {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  left: 24px;
+  padding: 8px 12px;
+  color: white;
+  background: #203d32dc;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  pointer-events: none;
+}
+
 .story {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1212,6 +1306,12 @@ dialog p {
   display: none;
 }
 
+  .video-showcase {
+  gap: 38px;
+  margin-inline: 36px;
+  padding-inline: 36px;
+}
+
   .activity-list article {
   gap: 35px;
 }
@@ -1389,6 +1489,39 @@ dialog p {
 
   .values-strip span:nth-of-type(3), .values-strip i:nth-of-type(2) {
   display: none;
+}
+
+  .video-showcase {
+  grid-template-columns: 1fr;
+  gap: 34px;
+  margin: 46px 16px;
+  padding: 38px 24px 24px;
+}
+
+  .video-copy h2 {
+  font-size: 39px;
+}
+
+  .video-copy > p:not(.eyebrow) {
+  font-size: 13px;
+}
+
+  .video-detail {
+  margin-block: 22px;
+  padding-block: 18px;
+}
+
+  .video-frame {
+  padding: 6px;
+}
+
+  .video-frame video {
+  aspect-ratio: 4 / 5;
+}
+
+  .video-label {
+  top: 18px;
+  left: 18px;
 }
 
   .story {

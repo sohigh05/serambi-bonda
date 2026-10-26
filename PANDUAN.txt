@@ -29,7 +29,14 @@ script.js — loading, navigasi, semakan tarikh dan mesej WhatsApp.
 manifest.webmanifest — nama, warna dan ikon aplikasi.
 service-worker.js — simpan fail laman untuk kegunaan offline.
 images/ — salinan 14 foto yang diberi, dengan nama fail ringkas.
+videos/ — video jelajah yang dipaparkan pada halaman Utama.
 icons/ — ikon 192px dan 512px untuk skrin utama.
+
+VIDEO
+Video jelajah berada dalam videos/jelajah-serambi-bonda.mp4. Ia mula bermain
+tanpa bunyi apabila bahagian video kelihatan pada skrin. Pengunjung boleh
+menggunakan kawalan video untuk membuka bunyi atau paparan skrin penuh.
+Video tidak disimpan dalam cache awal PWA supaya pemasangan kekal ringan.
 
 WHATSAPP
 Nombor Affendi Ahmad sudah dimasukkan dalam script.js sebagai 601111248074.

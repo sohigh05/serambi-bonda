@@ -128,27 +128,6 @@ document.getElementById('close-photo').addEventListener('click', function () {
   photoDialog.close();
 });
 
-/* 5. VIDEO RUMAH — mula bermain apabila video sudah kelihatan.
-   Cara ini mengurangkan penggunaan data semasa halaman baru dibuka. */
-const houseVideo = document.getElementById('house-video');
-const kurangkanGerakan = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if ('IntersectionObserver' in window && !kurangkanGerakan) {
-  const videoObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        houseVideo.play().catch(function () {
-          // Pelayar tertentu memerlukan pengguna menekan butang main sendiri.
-        });
-      } else {
-        houseVideo.pause();
-      }
-    });
-  }, { threshold: 0.45 });
-
-  videoObserver.observe(houseVideo);
-}
-
 /* 6. TARIKH — guna tarikh tempatan, bukan tarikh UTC. */
 function tarikhInput(date) {
   const year = date.getFullYear();
@@ -197,7 +176,7 @@ form.addEventListener('submit', function (event) {
     'Jumlah tetamu: ' + tetamu + ' orang',
     ...(nota ? ['Pertanyaan: ' + nota] : []),
     '',
-    'Boleh saya tahu kekosongan dan harga penginapan? Terima kasih.'
+    'Mohon maklumat tentang ketersediaan dan kadar penginapan bagi tarikh tersebut. Terima kasih.'
   ].join('\n');
 
   document.getElementById('message-preview').value = mesej;
@@ -244,13 +223,13 @@ function kemasKiniTawaranPasang() {
   installSteps.hidden = telefonApple;
 
   if (telefonApple) {
-    installDescription.textContent = 'Add this website to your iPhone or iPad Home Screen and open it like an app.';
+    installDescription.textContent = 'Tambahkan laman ini pada skrin utama iPhone atau iPad anda untuk mengaksesnya sebagai aplikasi.';
   } else if (telefonAndroid) {
-    installSteps.textContent = 'Android: tap Install app below if the button appears. Otherwise, open the Chrome menu and choose Install app or Add to Home screen.';
+    installSteps.textContent = 'Android: tekan Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, buka menu Chrome dan pilih “Install app” atau “Add to Home screen”.';
   } else if (safariMac) {
-    installSteps.textContent = 'Mac Safari: open the Share menu, choose Add to Dock, then select Add.';
+    installSteps.textContent = 'Safari pada Mac: buka menu “Share”, pilih “Add to Dock”, kemudian pilih “Add”.';
   } else {
-    installSteps.textContent = 'Computer: click Install app below if the button appears. Otherwise, use the install icon in the Chrome or Edge address bar or browser menu.';
+    installSteps.textContent = 'Komputer: klik Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, gunakan ikon pemasangan pada bar alamat atau menu Chrome atau Edge.';
   }
 }
 

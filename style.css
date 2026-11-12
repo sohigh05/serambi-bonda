@@ -7,18 +7,22 @@
   --gold: #b88a50;
 }
 
+/* Gaya paparan bagi *. */
 * {
   box-sizing: border-box;
 }
 
+/* Gaya paparan bagi [hidden]. */
 [hidden] {
   display: none !important;
 }
 
+/* Gaya paparan bagi html. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Gaya paparan bagi body. */
 body {
   margin: 0;
   background: var(--cream);
@@ -28,32 +32,47 @@ body {
   line-height: 1.7;
 }
 
+/* Gaya paparan bagi body.transitioning. */
 body.transitioning {
   overflow: hidden;
 }
 
+/* Gaya paparan bagi a. */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-button, input, textarea, select {
+/* Gaya paparan bagi button, input, textarea, select. */
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
-button, a, summary {
+/* Gaya paparan bagi button, a, summary. */
+button,
+a,
+summary {
   -webkit-tap-highlight-color: transparent;
 }
 
-button, summary {
+/* Gaya paparan bagi button, summary. */
+button,
+summary {
   cursor: pointer;
 }
 
+/* Gaya paparan bagi button. */
 button {
   border: 0;
 }
 
-a:focus-visible, button:focus-visible, summary:focus-visible {
+/* Gaya paparan bagi a:focus-visible, button:focus-visible, summary:focus-visible. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 5px;
 }
@@ -63,41 +82,52 @@ h1[tabindex="-1"]:focus {
   outline: none;
 }
 
+/* Gaya paparan bagi .install-dialog h2[tabindex="-1"]:focus. */
 .install-dialog h2[tabindex="-1"]:focus {
   outline: none;
 }
 
-h1, h2, p {
+/* Gaya paparan bagi h1, h2, p. */
+h1,
+h2,
+p {
   margin-top: 0;
 }
 
-h1, h2 {
-  font-family: Georgia, 'Times New Roman', serif;
+/* Gaya paparan bagi h1, h2. */
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -2px;
 }
 
+/* Gaya paparan bagi h1. */
 h1 {
   font-size: clamp(50px, 5.7vw, 88px);
   margin-bottom: 28px;
 }
 
+/* Gaya paparan bagi h2. */
 h2 {
   font-size: clamp(32px, 3.2vw, 49px);
 }
 
+/* Gaya paparan bagi em. */
 em {
   color: #778666;
   font-weight: 400;
 }
 
+/* Gaya paparan bagi .wrap. */
 .wrap {
   max-width: 1320px;
   margin-inline: auto;
   padding-inline: 64px;
 }
 
+/* Gaya paparan bagi .eyebrow. */
 .eyebrow {
   font-size: 10px;
   letter-spacing: 2px;
@@ -105,11 +135,13 @@ em {
   margin-bottom: 26px;
 }
 
+/* Gaya paparan bagi .muted. */
 .muted {
   color: var(--muted);
   font-size: 14px;
 }
 
+/* Gaya paparan bagi .button. */
 .button {
   display: inline-flex;
   gap: 26px;
@@ -121,23 +153,29 @@ em {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
-  transition: background .25s, transform .25s;
+  transition:
+    background 0.25s,
+    transform 0.25s;
 }
 
+/* Gaya paparan bagi .button:hover. */
 .button:hover {
   background: #395747;
   transform: translateY(-3px);
 }
 
+/* Gaya paparan bagi .button.small. */
 .button.small {
   padding: 12px 20px;
 }
 
+/* Gaya paparan bagi .button.light. */
 .button.light {
   background: var(--cream);
   color: var(--green);
 }
 
+/* Gaya paparan bagi .text-link. */
 .text-link {
   font-size: 12px;
   border-bottom: 1px solid #aeb5a4;
@@ -145,7 +183,6 @@ em {
   display: inline-flex;
   gap: 18px;
 }
-
 
 /* 2. NAVIGASI DESKTOP DAN IDENTITI */
 .announcement {
@@ -157,11 +194,13 @@ em {
   text-align: center;
 }
 
+/* Gaya paparan bagi .announcement span. */
 .announcement span {
   float: right;
   font-size: 8px;
 }
 
+/* Gaya paparan bagi .header. */
 .header {
   max-width: 1440px;
   margin: auto;
@@ -173,6 +212,7 @@ em {
   border-bottom: 1px solid var(--line);
 }
 
+/* Gaya paparan bagi .brand. */
 .brand {
   display: flex;
   align-items: center;
@@ -182,13 +222,17 @@ em {
   line-height: 1.1;
 }
 
+/* Gaya paparan bagi .brand small. */
 .brand small {
   display: block;
-  font: 8px Arial, sans-serif;
+  font:
+    8px Arial,
+    sans-serif;
   letter-spacing: 2.7px;
   margin-top: 9px;
 }
 
+/* Gaya paparan bagi .brand-mark. */
 .brand-mark {
   position: relative;
   font-size: 37px;
@@ -197,6 +241,7 @@ em {
   border-radius: 45% 45% 0 0;
 }
 
+/* Gaya paparan bagi .brand-mark span. */
 .brand-mark span {
   position: absolute;
   font-size: 14px;
@@ -205,19 +250,22 @@ em {
   background: var(--cream);
 }
 
+/* Gaya paparan bagi .desktop-nav. */
 .desktop-nav {
   display: flex;
   gap: 29px;
   font-size: 12px;
 }
 
+/* Gaya paparan bagi .desktop-nav a. */
 .desktop-nav a {
   position: relative;
   padding-block: 8px;
 }
 
+/* Gaya paparan bagi .desktop-nav a[aria-current="page"]::after. */
 .desktop-nav a[aria-current="page"]::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -226,6 +274,7 @@ em {
   background: var(--gold);
 }
 
+/* Gaya paparan bagi .mobile-nav. */
 .mobile-nav {
   display: none;
 }
@@ -240,6 +289,7 @@ em {
   align-items: center;
 }
 
+/* Gaya paparan bagi .tiny-star. */
 .tiny-star {
   color: var(--gold);
   font-size: 19px;
@@ -247,6 +297,7 @@ em {
   vertical-align: middle;
 }
 
+/* Gaya paparan bagi .intro. */
 .intro {
   font-size: 14px;
   color: var(--muted);
@@ -254,6 +305,7 @@ em {
   line-height: 1.9;
 }
 
+/* Gaya paparan bagi .hero-actions. */
 .hero-actions {
   display: flex;
   gap: 24px;
@@ -262,6 +314,7 @@ em {
   flex-wrap: wrap;
 }
 
+/* Gaya paparan bagi .hero-note. */
 .hero-note {
   display: flex;
   align-items: center;
@@ -269,17 +322,20 @@ em {
   margin-top: 43px;
 }
 
+/* Gaya paparan bagi .hero-note p. */
 .hero-note p {
   font-size: 11px;
   color: var(--muted);
   margin: 0;
 }
 
+/* Gaya paparan bagi .hero-note strong. */
 .hero-note strong {
   font-weight: 400;
   color: var(--green);
 }
 
+/* Gaya paparan bagi .line-house. */
 .line-house {
   font-size: 35px;
   border-right: 1px solid var(--line);
@@ -287,10 +343,12 @@ em {
   line-height: 1;
 }
 
+/* Gaya paparan bagi .hero-visual. */
 .hero-visual {
   position: relative;
 }
 
+/* Gaya paparan bagi .photo-placeholder. */
 .photo-placeholder {
   position: relative;
   overflow: hidden;
@@ -298,6 +356,7 @@ em {
   background-image: linear-gradient(135deg, #e7e9dd, #cbd4bd);
 }
 
+/* Gaya paparan bagi .hero-photo. */
 .hero-photo {
   height: 520px;
   border-radius: 180px 180px 5px 5px;
@@ -311,10 +370,31 @@ em {
 }
 
 /* Foto sebenar memenuhi bingkai tanpa mengubah nisbah gambar. */
-.hero-photo { padding: 0; border: 8px solid #eeeee2; overflow: hidden; }
-.hero-photo img, .room-photo img, .activity-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.hero-photo-label { position: absolute; left: 18px; bottom: 18px; padding: 8px 12px; background: #203d32dc; color: white; font-size: 9px; letter-spacing: 1.5px; }
+.hero-photo {
+  padding: 0;
+  border: 8px solid #eeeee2;
+  overflow: hidden;
+}
+.hero-photo img,
+.room-photo img,
+.activity-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-photo-label {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 12px;
+  background: #203d32dc;
+  color: white;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
 
+/* Gaya paparan bagi .photo-index. */
 .photo-index {
   position: absolute;
   top: 26px;
@@ -324,32 +404,39 @@ em {
   color: #64785a;
 }
 
+/* Gaya paparan bagi .hero-photo .photo-index. */
 .hero-photo .photo-index {
   top: 75px;
   left: 0;
   right: 0;
 }
 
+/* Gaya paparan bagi .placeholder-caption. */
 .placeholder-caption {
   position: relative;
 }
 
-.placeholder-caption span, .placeholder-label {
+/* Gaya paparan bagi .placeholder-caption span, .placeholder-label. */
+.placeholder-caption span,
+.placeholder-label {
   font-size: 9px;
   letter-spacing: 2px;
 }
 
+/* Gaya paparan bagi .placeholder-caption p. */
 .placeholder-caption p {
   font-family: Georgia, serif;
   font-size: 21px;
   margin: 9px 0;
 }
 
+/* Gaya paparan bagi .placeholder-caption small. */
 .placeholder-caption small {
   font-size: 10px;
   color: #65745c;
 }
 
+/* Gaya paparan bagi .photo-corner. */
 .photo-corner {
   position: absolute;
   bottom: 15px;
@@ -357,6 +444,7 @@ em {
   font-size: 24px;
 }
 
+/* Gaya paparan bagi .round-stamp. */
 .round-stamp {
   position: absolute;
   top: 34px;
@@ -377,12 +465,14 @@ em {
   transform: rotate(12deg);
 }
 
+/* Gaya paparan bagi .round-stamp span. */
 .round-stamp span {
   font-family: Georgia, serif;
   font-size: 25px;
   height: 24px;
 }
 
+/* Gaya paparan bagi .visual-caption. */
 .visual-caption {
   display: flex;
   justify-content: space-between;
@@ -396,9 +486,10 @@ em {
 .house-drawing {
   width: 220px;
   margin: 0 auto 54px;
-  opacity: .47;
+  opacity: 0.47;
 }
 
+/* Gaya paparan bagi .roof. */
 .roof {
   width: 158px;
   height: 80px;
@@ -408,6 +499,7 @@ em {
   margin: 0 auto -26px;
 }
 
+/* Gaya paparan bagi .house-body. */
 .house-body {
   position: relative;
   display: flex;
@@ -418,14 +510,22 @@ em {
   background: #d7dfcc;
 }
 
+/* Gaya paparan bagi .house-body i. */
 .house-body i {
   display: block;
   height: 33px;
   width: 33px;
   border: 1px solid #637858;
-  background: linear-gradient(90deg, transparent 48%, #637858 49%, #637858 51%, transparent 52%);
+  background: linear-gradient(
+    90deg,
+    transparent 48%,
+    #637858 49%,
+    #637858 51%,
+    transparent 52%
+  );
 }
 
+/* Gaya paparan bagi .house-body b. */
 .house-body b {
   width: 37px;
   height: 68px;
@@ -433,6 +533,7 @@ em {
   align-self: flex-end;
 }
 
+/* Gaya paparan bagi .steps. */
 .steps {
   width: 90px;
   height: 17px;
@@ -441,6 +542,7 @@ em {
   margin: auto;
 }
 
+/* Gaya paparan bagi .values-strip. */
 .values-strip {
   display: flex;
   align-items: center;
@@ -453,106 +555,14 @@ em {
   font-size: 18px;
 }
 
+/* Gaya paparan bagi .values-strip i. */
 .values-strip i {
   color: #9ca989;
   font-size: 22px;
   font-style: normal;
 }
 
-/* Video rumah diletakkan seperti sebuah tayangan ringkas, bukan sekadar fail media. */
-.video-showcase {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 72px;
-  align-items: center;
-  margin-top: 90px;
-  margin-bottom: 90px;
-  padding-block: 62px;
-  padding-inline: 54px;
-  color: var(--cream);
-  background: var(--green);
-  border-radius: 8px;
-}
-
-.video-copy {
-  min-width: 0;
-}
-
-.video-copy h2 {
-  margin-bottom: 24px;
-}
-
-.video-copy > p:not(.eyebrow) {
-  max-width: 430px;
-  color: #d8dfd8;
-}
-
-.video-detail {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-block: 24px;
-  margin-block: 26px;
-  border-top: 1px solid #ffffff30;
-  border-bottom: 1px solid #ffffff30;
-}
-
-.video-detail > span {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  color: var(--green);
-  background: var(--cream);
-  border-radius: 50%;
-  font-size: 12px;
-}
-
-.video-detail p {
-  margin: 0;
-  color: #d8dfd8;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.video-detail strong {
-  color: white;
-  font-weight: 600;
-}
-
-.video-frame {
-  position: relative;
-  min-width: 0;
-  padding: 9px;
-  background: #eee9dc;
-  border-radius: 5px;
-  box-shadow: 0 28px 70px #081a1438;
-}
-
-.video-frame video {
-  display: block;
-  width: 100%;
-  max-height: 620px;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: #101a16;
-  border-radius: 2px;
-}
-
-.video-label {
-  position: absolute;
-  z-index: 1;
-  top: 24px;
-  left: 24px;
-  padding: 8px 12px;
-  color: white;
-  background: #203d32dc;
-  font-size: 8px;
-  letter-spacing: 1.5px;
-  pointer-events: none;
-}
-
+/* Gaya paparan bagi .story. */
 .story {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -561,11 +571,13 @@ em {
   padding-bottom: 95px;
 }
 
+/* Gaya paparan bagi .story-copy p. */
 .story-copy p {
   font-size: 14px;
   color: var(--muted);
 }
 
+/* Gaya paparan bagi .signature. */
 .signature {
   font-family: Georgia, serif;
   font-style: italic;
@@ -574,6 +586,7 @@ em {
   margin: 26px 0 12px;
 }
 
+/* Gaya paparan bagi .draft-note. */
 .draft-note {
   color: var(--muted);
   display: block;
@@ -581,6 +594,7 @@ em {
   margin-top: 15px;
 }
 
+/* Gaya paparan bagi .invitation. */
 .invitation {
   position: relative;
   background: var(--green);
@@ -591,26 +605,28 @@ em {
   max-width: 1192px;
 }
 
+/* Gaya paparan bagi .invitation h2. */
 .invitation h2 {
   margin: 20px 0 30px;
   font-size: 55px;
 }
 
+/* Gaya paparan bagi .invitation em. */
 .invitation em {
   color: #bac6a5;
 }
 
+/* Gaya paparan bagi .invitation-flower. */
 .invitation-flower {
   position: absolute;
   font-size: 300px;
   right: 85px;
   top: -35px;
   color: #95a77d;
-  opacity: .28;
+  opacity: 0.28;
   animation: turn 60s linear infinite;
   pointer-events: none;
 }
-
 
 /* 4. HALAMAN DALAMAN */
 .inner-page {
@@ -618,6 +634,7 @@ em {
   padding-bottom: 40px;
 }
 
+/* Gaya paparan bagi .page-heading. */
 .page-heading {
   display: grid;
   grid-template-columns: 1.35fr 1fr;
@@ -625,15 +642,18 @@ em {
   gap: 80px;
 }
 
+/* Gaya paparan bagi .page-heading h1. */
 .page-heading h1 {
   font-size: clamp(48px, 5vw, 72px);
 }
 
+/* Gaya paparan bagi .page-heading > p. */
 .page-heading > p {
   color: var(--muted);
   max-width: 360px;
 }
 
+/* Gaya paparan bagi .notice. */
 .notice {
   font-size: 11px;
   padding: 13px 18px;
@@ -642,43 +662,102 @@ em {
   margin: 22px 0 38px;
 }
 
+/* Gaya paparan bagi .room-grid. */
 .room-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 35px;
 }
 
+/* Gaya paparan bagi .room-card.wide. */
 .room-card.wide {
   grid-column: 1 / -1;
 }
 
+/* Gaya paparan bagi .room-photo. */
 .room-photo {
   height: 300px;
   display: grid;
   place-content: center;
   text-align: center;
 }
-.room-photo, .activity-photo { overflow: hidden; background: #dce1d1; }
-.room-photo img, .activity-photo img { transition: transform .4s ease; }
-.room-photo:hover img, .activity-photo:hover img { transform: scale(1.03); }
+.room-photo,
+.activity-photo {
+  overflow: hidden;
+  background: #dce1d1;
+}
+.room-photo img,
+.activity-photo img {
+  transition: transform 0.4s ease;
+}
+.room-photo:hover img,
+.activity-photo:hover img {
+  transform: scale(1.03);
+}
 
 /* Galeri semua foto: empat lajur pada desktop, dua pada telefon. */
-.gallery-section { padding: 72px 0 10px; }
-.gallery-section h2 { margin-bottom: 12px; }
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
-.gallery-item { padding: 0; text-align: left; background: transparent; color: var(--green); }
-.gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
-.gallery-item span { display: block; padding-top: 8px; font-size: 12px; }
-.gallery-item:hover img { filter: brightness(.9); }
-.photo-dialog { width: min(900px, calc(100% - 24px)); max-width: 900px; padding: 16px; }
-.photo-dialog img { display: block; max-width: 100%; max-height: 75dvh; margin: auto; object-fit: contain; }
-.photo-dialog p { margin: 12px 4px 0; font-size: 13px; }
-.field-note { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+.gallery-section {
+  padding: 72px 0 10px;
+}
+.gallery-section h2 {
+  margin-bottom: 12px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+.gallery-item {
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  color: var(--green);
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.gallery-item span {
+  display: block;
+  padding-top: 8px;
+  font-size: 12px;
+}
+.gallery-item:hover img {
+  filter: brightness(0.9);
+}
+.photo-dialog {
+  width: min(900px, calc(100% - 24px));
+  max-width: 900px;
+  padding: 16px;
+}
+.photo-dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: 75dvh;
+  margin: auto;
+  object-fit: contain;
+}
+.photo-dialog p {
+  margin: 12px 4px 0;
+  font-size: 13px;
+}
+.field-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
 
+/* Gaya paparan bagi .wide .room-photo. */
 .wide .room-photo {
   height: 390px;
 }
 
+/* Gaya paparan bagi .placeholder-symbol. */
 .placeholder-symbol {
   display: block;
   font-family: Georgia, serif;
@@ -688,20 +767,24 @@ em {
   line-height: 1.4;
 }
 
+/* Gaya paparan bagi .placeholder-label. */
 .placeholder-label {
   display: block;
   color: #56664b;
   margin-top: 16px;
 }
 
+/* Gaya paparan bagi .clay. */
 .clay {
   background: linear-gradient(135deg, #e8dfcf, #d8c7af);
 }
 
+/* Gaya paparan bagi .sage. */
 .sage {
   background: linear-gradient(135deg, #dae1d5, #b7c9b3);
 }
 
+/* Gaya paparan bagi .room-info. */
 .room-info {
   display: flex;
   justify-content: space-between;
@@ -709,22 +792,28 @@ em {
   padding-top: 22px;
 }
 
+/* Gaya paparan bagi .room-info h2. */
 .room-info h2 {
   font-size: 28px;
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
   margin-bottom: 10px;
 }
 
+/* Gaya paparan bagi .room-info p. */
 .room-info p {
   font-size: 13px;
   color: var(--muted);
 }
 
+/* Gaya paparan bagi .room-info > span. */
 .room-info > span {
   color: #9ba68d;
-  font: italic 24px Georgia, serif;
+  font:
+    italic 24px Georgia,
+    serif;
 }
 
+/* Gaya paparan bagi .amenities. */
 .amenities {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -732,12 +821,14 @@ em {
   margin-block: 80px;
 }
 
+/* Gaya paparan bagi .amenities ul. */
 .amenities ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Gaya paparan bagi .amenities li. */
 .amenities li {
   display: flex;
   gap: 24px;
@@ -747,11 +838,13 @@ em {
   color: #7a876c;
 }
 
+/* Gaya paparan bagi .amenities li span. */
 .amenities li span {
   font-size: 15px;
   color: var(--green);
 }
 
+/* Gaya paparan bagi .bottom-cta. */
 .bottom-cta {
   border-top: 1px solid var(--line);
   padding-block: 35px;
@@ -761,11 +854,15 @@ em {
   gap: 20px;
 }
 
+/* Gaya paparan bagi .bottom-cta p. */
 .bottom-cta p {
   margin: 0;
-  font: 26px Georgia, serif;
+  font:
+    26px Georgia,
+    serif;
 }
 
+/* Gaya paparan bagi .activity-list article. */
 .activity-list article {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -774,10 +871,12 @@ em {
   margin-bottom: 60px;
 }
 
+/* Gaya paparan bagi .activity-list article:nth-child(even) .activity-photo. */
 .activity-list article:nth-child(even) .activity-photo {
   order: 2;
 }
 
+/* Gaya paparan bagi .activity-photo. */
 .activity-photo {
   height: 340px;
   display: grid;
@@ -785,15 +884,18 @@ em {
   text-align: center;
 }
 
+/* Gaya paparan bagi .activity-list h2. */
 .activity-list h2 {
   margin-bottom: 20px;
 }
 
+/* Gaya paparan bagi .activity-list p:not(.eyebrow). */
 .activity-list p:not(.eyebrow) {
   color: var(--muted);
   font-size: 14px;
 }
 
+/* Gaya paparan bagi .tag. */
 .tag {
   display: inline-block;
   border: 1px solid #cdd4c3;
@@ -801,7 +903,6 @@ em {
   padding: 6px 14px;
   font-size: 10px;
 }
-
 
 /* 5. BORANG, DIALOG DAN SOALAN LAZIM */
 .contact-grid {
@@ -811,26 +912,31 @@ em {
   margin-top: 40px;
 }
 
+/* Gaya paparan bagi .contact-details h2. */
 .contact-details h2 {
   font-size: 38px;
 }
 
+/* Gaya paparan bagi .contact-rule. */
 .contact-rule {
   border-top: 1px solid var(--line);
   padding-top: 20px;
   margin-top: 20px;
 }
 
+/* Gaya paparan bagi .contact-rule span. */
 .contact-rule span {
   font-size: 9px;
   letter-spacing: 2px;
 }
 
+/* Gaya paparan bagi .contact-rule p. */
 .contact-rule p {
   margin: 6px 0;
   font-size: 14px;
 }
 
+/* Gaya paparan bagi .contact-details address. */
 .contact-details address {
   font-style: normal;
   font-size: 16px;
@@ -839,7 +945,8 @@ em {
 }
 
 /* Nombor dan pautan WhatsApp mudah nampak serta mudah ditekan di telefon. */
-.contact-number, .contact-whatsapp {
+.contact-number,
+.contact-whatsapp {
   display: inline-block;
   font-weight: 700;
   text-decoration: underline;
@@ -847,10 +954,12 @@ em {
   padding-block: 3px;
 }
 
+/* Gaya paparan bagi .contact-whatsapp. */
 .contact-whatsapp {
   margin-top: 4px;
 }
 
+/* Gaya paparan bagi .map-panel. */
 .map-panel {
   margin-top: 30px;
   background: #e4e7da;
@@ -858,6 +967,7 @@ em {
   border: 1px solid var(--line);
 }
 
+/* Gaya paparan bagi .map-panel iframe. */
 .map-panel iframe {
   display: block;
   width: 100%;
@@ -866,6 +976,7 @@ em {
   background: #dce1d1;
 }
 
+/* Gaya paparan bagi .map-link. */
 .map-link {
   display: block;
   padding: 12px 8px 5px;
@@ -876,28 +987,33 @@ em {
   text-underline-offset: 3px;
 }
 
+/* Gaya paparan bagi .booking-form. */
 .booking-form {
   background: #edeedf;
   padding: 35px;
   border-radius: 8px;
 }
 
+/* Gaya paparan bagi .form-title. */
 .form-title {
   display: flex;
   gap: 20px;
   justify-content: space-between;
 }
 
+/* Gaya paparan bagi .form-title h2. */
 .form-title h2 {
   font-size: 29px;
   letter-spacing: -1px;
   margin-bottom: 16px;
 }
 
+/* Gaya paparan bagi .form-title > span. */
 .form-title > span {
   font-size: 25px;
 }
 
+/* Gaya paparan bagi label. */
 label {
   display: block;
   font-size: 12px;
@@ -905,12 +1021,16 @@ label {
   margin: 18px 0 8px;
 }
 
+/* Gaya paparan bagi label span. */
 label span {
   color: var(--muted);
   font-weight: 400;
 }
 
-input, select, textarea {
+/* Gaya paparan bagi input, select, textarea. */
+input,
+select,
+textarea {
   width: 100%;
   min-width: 0;
   color: var(--green);
@@ -921,55 +1041,69 @@ input, select, textarea {
   font-size: 13px;
 }
 
-input:focus, select:focus, textarea:focus {
+/* Gaya paparan bagi input:focus, select:focus, textarea:focus. */
+input:focus,
+select:focus,
+textarea:focus {
   outline: 2px solid #849477;
   outline-offset: 1px;
 }
 
+/* Gaya paparan bagi textarea. */
 textarea {
   resize: vertical;
 }
 
+/* Gaya paparan bagi .form-row. */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
+/* Gaya paparan bagi .booking-form > .button. */
 .booking-form > .button {
   width: 100%;
   margin-top: 23px;
 }
 
-#form-status, #copy-status {
+/* Gaya paparan bagi #form-status, #copy-status. */
+#form-status,
+#copy-status {
   font-size: 12px;
   margin: 12px 0 0;
 }
 
+/* Gaya paparan bagi .faq. */
 .faq {
   max-width: 780px;
   margin: 90px auto 20px;
 }
 
+/* Gaya paparan bagi .faq h2. */
 .faq h2 {
   font-size: 38px;
 }
 
+/* Gaya paparan bagi details. */
 details {
   border-bottom: 1px solid var(--line);
   padding: 20px 0;
 }
 
+/* Gaya paparan bagi summary. */
 summary {
   font-size: 14px;
 }
 
+/* Gaya paparan bagi details p. */
 details p {
   margin: 16px 0 0;
   color: var(--muted);
   font-size: 13px;
 }
 
+/* Gaya paparan bagi dialog. */
 dialog {
   max-width: 560px;
   width: calc(100% - 32px);
@@ -981,15 +1115,18 @@ dialog {
   padding: 35px;
 }
 
+/* Gaya paparan bagi dialog::backdrop. */
 dialog::backdrop {
   background: #15291f99;
   backdrop-filter: blur(5px);
 }
 
+/* Gaya paparan bagi dialog h2. */
 dialog h2 {
   font-size: 36px;
 }
 
+/* Gaya paparan bagi dialog p. */
 dialog p {
   font-size: 13px;
 }
@@ -1002,6 +1139,7 @@ dialog p {
   text-align: center;
 }
 
+/* Gaya paparan bagi .install-icon. */
 .install-icon {
   display: block;
   width: 72px;
@@ -1010,14 +1148,17 @@ dialog p {
   border-radius: 18px;
 }
 
+/* Gaya paparan bagi .install-dialog .eyebrow. */
 .install-dialog .eyebrow {
   margin-bottom: 12px;
 }
 
+/* Gaya paparan bagi .install-dialog h2. */
 .install-dialog h2 {
   margin-bottom: 16px;
 }
 
+/* Gaya paparan bagi .install-steps. */
 .install-steps {
   margin: 20px 0 0;
   padding: 15px;
@@ -1034,6 +1175,7 @@ dialog p {
   color: var(--muted);
 }
 
+/* Gaya paparan bagi .guide-list. */
 .guide-list {
   display: grid;
   gap: 14px;
@@ -1042,6 +1184,7 @@ dialog p {
   list-style: none;
 }
 
+/* Gaya paparan bagi .guide-step. */
 .guide-step {
   padding: 15px;
   background: #fbfaf5;
@@ -1050,12 +1193,14 @@ dialog p {
   text-align: left;
 }
 
+/* Gaya paparan bagi .guide-step-heading. */
 .guide-step-heading {
   display: flex;
   align-items: flex-start;
   gap: 12px;
 }
 
+/* Gaya paparan bagi .guide-step-heading > span. */
 .guide-step-heading > span {
   display: grid;
   flex: 0 0 30px;
@@ -1069,30 +1214,35 @@ dialog p {
   font-weight: 700;
 }
 
+/* Gaya paparan bagi .guide-step h3. */
 .guide-step h3 {
   margin: 2px 0 4px;
   font-size: 15px;
   line-height: 1.3;
 }
 
+/* Gaya paparan bagi .guide-step p. */
 .guide-step p {
   margin-bottom: 12px;
   color: var(--muted);
   line-height: 1.5;
 }
 
+/* Gaya paparan bagi .guide-step a, .guide-step img. */
 .guide-step a,
 .guide-step img {
   display: block;
   width: 100%;
 }
 
+/* Gaya paparan bagi .guide-step img. */
 .guide-step img {
   height: auto;
   border: 1px solid var(--line);
   border-radius: 5px;
 }
 
+/* Gaya paparan bagi .guide-finish. */
 .guide-finish {
   padding: 15px;
   background: #e8eade;
@@ -1100,6 +1250,7 @@ dialog p {
   text-align: left;
 }
 
+/* Gaya paparan bagi .install-actions. */
 .install-actions {
   display: flex;
   flex-direction: column;
@@ -1108,6 +1259,7 @@ dialog p {
   margin-top: 23px;
 }
 
+/* Gaya paparan bagi .install-later. */
 .install-later {
   background: transparent;
   color: var(--green);
@@ -1116,6 +1268,7 @@ dialog p {
   text-underline-offset: 4px;
 }
 
+/* Gaya paparan bagi .install-reopen. */
 .install-reopen {
   background: transparent;
   color: var(--green);
@@ -1124,6 +1277,7 @@ dialog p {
   font-size: 12px;
 }
 
+/* Gaya paparan bagi .close-dialog. */
 .close-dialog {
   position: absolute;
   top: 10px;
@@ -1134,13 +1288,13 @@ dialog p {
   padding: 0 10px;
 }
 
+/* Gaya paparan bagi .dialog-actions. */
 .dialog-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 20px;
 }
-
 
 /* 6. FOOTER, LOADING DAN ANIMASI */
 .footer {
@@ -1152,27 +1306,36 @@ dialog p {
   padding-bottom: 42px;
 }
 
+/* Gaya paparan bagi .footer-brand. */
 .footer-brand {
-  font: 26px Georgia, serif;
+  font:
+    26px Georgia,
+    serif;
 }
 
+/* Gaya paparan bagi .footer-brand span. */
 .footer-brand span {
   display: block;
-  font: 11px Arial, sans-serif;
+  font:
+    11px Arial,
+    sans-serif;
   color: var(--muted);
   margin-top: 12px;
 }
 
+/* Gaya paparan bagi .footer p. */
 .footer p {
   font-size: 12px;
   margin: 0;
 }
 
+/* Gaya paparan bagi .footer small. */
 .footer small {
   color: var(--muted);
   font-size: 10px;
 }
 
+/* Gaya paparan bagi .curtain. */
 .curtain {
   position: fixed;
   inset: 0;
@@ -1185,16 +1348,21 @@ dialog p {
   align-items: center;
 }
 
+/* Gaya paparan bagi .curtain-mark. */
 .curtain-mark {
-  font: italic 90px Georgia, serif;
+  font:
+    italic 90px Georgia,
+    serif;
 }
 
+/* Gaya paparan bagi .curtain p. */
 .curtain p {
   font-size: 12px;
   letter-spacing: 2px;
   margin-top: 25px;
 }
 
+/* Gaya paparan bagi .loading-line. */
 .loading-line {
   width: 170px;
   height: 2px;
@@ -1203,8 +1371,9 @@ dialog p {
   overflow: hidden;
 }
 
+/* Gaya paparan bagi .loading-line::after. */
 .loading-line::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: #e1d9b8;
@@ -1212,455 +1381,495 @@ dialog p {
   animation: loading 2s ease-in-out forwards;
 }
 
+/* Gaya paparan bagi .page:not([hidden]). */
 .page:not([hidden]) {
-  animation: arrive .6s ease-out;
+  animation: arrive 0.6s ease-out;
 }
 
+/* Gaya paparan bagi .noscript-note. */
 .noscript-note {
   padding: 20px;
   background: #ece2c8;
   text-align: center;
 }
 
+/* Langkah pergerakan animasi. */
 @keyframes loading {
   from {
-  transform: scaleX(0);
-}
- to {
-  transform: scaleX(1);
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
-}
-
+/* Langkah pergerakan animasi. */
 @keyframes arrive {
   from {
-  opacity: 0;
-  transform: translateY(14px);
-}
- to {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-}
-
+/* Langkah pergerakan animasi. */
 @keyframes turn {
   to {
-  transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
-
-}
-
 
 /* 7. TABLET / IPAD — dua kolum dikekalkan dengan ruang lebih padat. */
 @media (max-width: 1100px) {
   .wrap {
-  padding-inline: 36px;
-}
+    padding-inline: 36px;
+  }
 
+  /* Gaya paparan bagi .header. */
   .header {
-  padding-inline: 36px;
-}
+    padding-inline: 36px;
+  }
 
+  /* Gaya paparan bagi .header-cta. */
   .header-cta {
-  display: none;
-}
+    display: none;
+  }
 
+  /* Gaya paparan bagi .hero. */
   .hero {
-  gap: 38px;
-  padding-top: 50px;
-}
+    gap: 38px;
+    padding-top: 50px;
+  }
 
+  /* Gaya paparan bagi .hero-photo. */
   .hero-photo {
-  height: 475px;
-}
+    height: 475px;
+  }
 
+  /* Gaya paparan bagi .round-stamp. */
   .round-stamp {
-  right: -14px;
-  width: 90px;
-  height: 90px;
-}
+    right: -14px;
+    width: 90px;
+    height: 90px;
+  }
 
+  /* Gaya paparan bagi .hero-actions. */
   .hero-actions {
-  gap: 15px;
-}
+    gap: 15px;
+  }
 
-  .story, .contact-grid {
-  gap: 40px;
-}
+  /* Gaya paparan bagi .story, .contact-grid. */
+  .story,
+  .contact-grid {
+    gap: 40px;
+  }
 
+  /* Gaya paparan bagi .page-heading. */
   .page-heading {
-  gap: 35px;
-}
+    gap: 35px;
+  }
 
+  /* Gaya paparan bagi .invitation. */
   .invitation {
-  margin-inline: 36px;
-}
+    margin-inline: 36px;
+  }
 
+  /* Gaya paparan bagi .values-strip. */
   .values-strip {
-  font-size: 15px;
-  gap: 12px;
-}
+    font-size: 15px;
+    gap: 12px;
+  }
 
-  .values-strip span:last-child, .values-strip i:last-of-type {
-  display: none;
-}
+  /* Gaya paparan bagi .values-strip span:last-child, .values-strip i:last-of-type. */
+  .values-strip span:last-child,
+  .values-strip i:last-of-type {
+    display: none;
+  }
 
-  .video-showcase {
-  gap: 38px;
-  margin-inline: 36px;
-  padding-inline: 36px;
-}
-
+  /* Gaya paparan bagi .activity-list article. */
   .activity-list article {
-  gap: 35px;
-}
+    gap: 35px;
+  }
 
+  /* Gaya paparan bagi .booking-form. */
   .booking-form {
-  padding: 25px;
-}
+    padding: 25px;
+  }
 
+  /* Gaya paparan bagi .form-row. */
   .form-row {
-  grid-template-columns: 1fr;
-  gap: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
-
-}
-
 
 /* 8. TELEFON — navigasi bawah seperti aplikasi dan butang mudah ditekan. */
 @media (max-width: 700px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .gallery-item span { font-size: 11px; }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .gallery-item span {
+    font-size: 11px;
+  }
   body {
-  padding-bottom: calc(78px + env(safe-area-inset-bottom));
-}
+    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+  }
 
+  /* Gaya paparan bagi .wrap. */
   .wrap {
-  padding-inline: 24px;
-}
+    padding-inline: 24px;
+  }
 
+  /* Gaya paparan bagi .announcement. */
   .announcement {
-  font-size: 7px;
-  letter-spacing: 1.5px;
-  padding: 9px;
-}
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    padding: 9px;
+  }
 
+  /* Gaya paparan bagi .announcement span. */
   .announcement span {
-  display: none;
-}
+    display: none;
+  }
 
+  /* Gaya paparan bagi .header. */
   .header {
-  padding: 18px 24px;
-}
+    padding: 18px 24px;
+  }
 
+  /* Gaya paparan bagi .brand. */
   .brand {
-  font-size: 21px;
-}
+    font-size: 21px;
+  }
 
+  /* Gaya paparan bagi .brand-mark. */
   .brand-mark {
-  font-size: 29px;
-}
+    font-size: 29px;
+  }
 
+  /* Gaya paparan bagi .brand small. */
   .brand small {
-  font-size: 7px;
-}
+    font-size: 7px;
+  }
 
+  /* Gaya paparan bagi .desktop-nav. */
   .desktop-nav {
-  display: none;
-}
+    display: none;
+  }
 
+  /* Gaya paparan bagi .header-cta. */
   .header-cta {
-  display: inline-flex;
-  font-size: 10px;
-  padding: 10px 12px !important;
-  gap: 8px;
-}
+    display: inline-flex;
+    font-size: 10px;
+    padding: 10px 12px !important;
+    gap: 8px;
+  }
 
+  /* Gaya paparan bagi .header-cta span. */
   .header-cta span {
-  display: none;
-}
+    display: none;
+  }
 
+  /* Gaya paparan bagi .mobile-nav. */
   .mobile-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  background: #f8f7f0f5;
-  backdrop-filter: blur(15px);
-  border-top: 1px solid var(--line);
-  padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
-}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: #f8f7f0f5;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--line);
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+  }
 
+  /* Gaya paparan bagi .mobile-nav a. */
   .mobile-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  padding: 3px;
-  border-radius: 9px;
-  min-height: 48px;
-  color: var(--muted);
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 9px;
+    min-height: 48px;
+    color: var(--muted);
+  }
 
+  /* Gaya paparan bagi .mobile-nav a > span. */
   .mobile-nav a > span {
-  font-size: 23px;
-  line-height: 1.3;
-}
+    font-size: 23px;
+    line-height: 1.3;
+  }
 
+  /* Gaya paparan bagi .mobile-nav a[aria-current="page"]. */
   .mobile-nav a[aria-current="page"] {
-  color: var(--green);
-  background: #e6eadd;
-}
+    color: var(--green);
+    background: #e6eadd;
+  }
 
+  /* Gaya paparan bagi .hero. */
   .hero {
-  grid-template-columns: 1fr;
-  padding-top: 35px;
-  gap: 33px;
-  padding-bottom: 33px;
-}
+    grid-template-columns: 1fr;
+    padding-top: 35px;
+    gap: 33px;
+    padding-bottom: 33px;
+  }
 
+  /* Gaya paparan bagi .eyebrow. */
   .eyebrow {
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
-}
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
 
+  /* Gaya paparan bagi h1. */
   h1 {
-  font-size: clamp(48px, 12vw, 70px);
-  letter-spacing: -2px;
-}
+    font-size: clamp(48px, 12vw, 70px);
+    letter-spacing: -2px;
+  }
 
+  /* Gaya paparan bagi .intro. */
   .intro {
-  font-size: 13px;
-}
+    font-size: 13px;
+  }
 
+  /* Gaya paparan bagi .hero-actions. */
   .hero-actions {
-  margin-top: 24px;
-}
+    margin-top: 24px;
+  }
 
+  /* Gaya paparan bagi .button. */
   .button {
-  padding: 15px 19px;
-  min-height: 46px;
-}
+    padding: 15px 19px;
+    min-height: 46px;
+  }
 
+  /* Gaya paparan bagi .hero-note. */
   .hero-note {
-  margin-top: 27px;
-}
+    margin-top: 27px;
+  }
 
+  /* Gaya paparan bagi .hero-photo. */
   .hero-photo {
-  height: 410px;
-  border-radius: 150px 150px 5px 5px;
-}
+    height: 410px;
+    border-radius: 150px 150px 5px 5px;
+  }
 
+  /* Gaya paparan bagi .house-drawing. */
   .house-drawing {
-  transform: scale(.85);
-  margin-bottom: 30px;
-}
+    transform: scale(0.85);
+    margin-bottom: 30px;
+  }
 
+  /* Gaya paparan bagi .hero-photo .photo-index. */
   .hero-photo .photo-index {
-  top: 48px;
-}
+    top: 48px;
+  }
 
+  /* Gaya paparan bagi .round-stamp. */
   .round-stamp {
-  right: -8px;
-  top: 18px;
-}
+    right: -8px;
+    top: 18px;
+  }
 
+  /* Gaya paparan bagi .placeholder-caption p. */
   .placeholder-caption p {
-  font-size: 19px;
-}
+    font-size: 19px;
+  }
 
+  /* Gaya paparan bagi .visual-caption. */
   .visual-caption {
-  font-size: 7px;
-  letter-spacing: 1px;
-}
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
 
+  /* Gaya paparan bagi .values-strip. */
   .values-strip {
-  font-size: 14px;
-  padding: 18px;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+    font-size: 14px;
+    padding: 18px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 
-  .values-strip span:nth-of-type(3), .values-strip i:nth-of-type(2) {
-  display: none;
-}
+  /* Gaya paparan bagi .values-strip span:nth-of-type(3), .values-strip i:nth-of-type(2). */
+  .values-strip span:nth-of-type(3),
+  .values-strip i:nth-of-type(2) {
+    display: none;
+  }
 
-  .video-showcase {
-  grid-template-columns: 1fr;
-  gap: 34px;
-  margin: 46px 16px;
-  padding: 38px 24px 24px;
-}
-
-  .video-copy h2 {
-  font-size: 39px;
-}
-
-  .video-copy > p:not(.eyebrow) {
-  font-size: 13px;
-}
-
-  .video-detail {
-  margin-block: 22px;
-  padding-block: 18px;
-}
-
-  .video-frame {
-  padding: 6px;
-}
-
-  .video-frame video {
-  aspect-ratio: 4 / 5;
-}
-
-  .video-label {
-  top: 18px;
-  left: 18px;
-}
-
+  /* Gaya paparan bagi .story. */
   .story {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding-block: 50px;
-}
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-block: 50px;
+  }
 
+  /* Gaya paparan bagi .story h2. */
   .story h2 {
-  font-size: 39px;
-}
+    font-size: 39px;
+  }
 
+  /* Gaya paparan bagi .invitation. */
   .invitation {
-  margin-inline: 16px;
-  padding: 35px 25px;
-}
+    margin-inline: 16px;
+    padding: 35px 25px;
+  }
 
+  /* Gaya paparan bagi .invitation h2. */
   .invitation h2 {
-  font-size: 44px;
-}
+    font-size: 44px;
+  }
 
+  /* Gaya paparan bagi .invitation-flower. */
   .invitation-flower {
-  font-size: 220px;
-  right: -80px;
-  top: 0;
-}
+    font-size: 220px;
+    right: -80px;
+    top: 0;
+  }
 
+  /* Gaya paparan bagi .invitation .button. */
   .invitation .button {
-  position: relative;
-  z-index: 1;
-}
+    position: relative;
+    z-index: 1;
+  }
 
+  /* Gaya paparan bagi .inner-page. */
   .inner-page {
-  padding-top: 35px;
-}
+    padding-top: 35px;
+  }
 
+  /* Gaya paparan bagi .page-heading. */
   .page-heading {
-  grid-template-columns: 1fr;
-  gap: 0;
-}
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 
+  /* Gaya paparan bagi .page-heading h1. */
   .page-heading h1 {
-  font-size: 48px;
-}
+    font-size: 48px;
+  }
 
+  /* Gaya paparan bagi .page-heading > p. */
   .page-heading > p {
-  font-size: 13px;
-}
+    font-size: 13px;
+  }
 
+  /* Gaya paparan bagi .notice. */
   .notice {
-  font-size: 10px;
-}
+    font-size: 10px;
+  }
 
+  /* Gaya paparan bagi .room-grid. */
   .room-grid {
-  grid-template-columns: 1fr;
-  gap: 26px;
-}
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
 
+  /* Gaya paparan bagi .room-card.wide. */
   .room-card.wide {
-  grid-column: auto;
-}
+    grid-column: auto;
+  }
 
-  .room-photo, .wide .room-photo {
-  height: 260px;
-}
+  /* Gaya paparan bagi .room-photo, .wide .room-photo. */
+  .room-photo,
+  .wide .room-photo {
+    height: 260px;
+  }
 
+  /* Gaya paparan bagi .room-info h2. */
   .room-info h2 {
-  font-size: 26px;
-}
+    font-size: 26px;
+  }
 
+  /* Gaya paparan bagi .amenities. */
   .amenities {
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-block: 45px;
-}
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-block: 45px;
+  }
 
+  /* Gaya paparan bagi .bottom-cta. */
   .bottom-cta {
-  align-items: flex-start;
-  flex-direction: column;
-}
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
+  /* Gaya paparan bagi .activity-list article. */
   .activity-list article {
-  grid-template-columns: 1fr;
-  gap: 25px;
-  margin-bottom: 45px;
-}
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 45px;
+  }
 
+  /* Gaya paparan bagi .activity-list article:nth-child(even) .activity-photo. */
   .activity-list article:nth-child(even) .activity-photo {
-  order: 0;
-}
+    order: 0;
+  }
 
+  /* Gaya paparan bagi .activity-photo. */
   .activity-photo {
-  height: 260px;
-}
+    height: 260px;
+  }
 
+  /* Gaya paparan bagi .contact-grid. */
   .contact-grid {
-  grid-template-columns: 1fr;
-  gap: 35px;
-  margin-top: 20px;
-}
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 20px;
+  }
 
+  /* Gaya paparan bagi .booking-form. */
   .booking-form {
-  padding: 22px;
-  order: -1;
-}
+    padding: 22px;
+    order: -1;
+  }
 
+  /* Gaya paparan bagi .faq. */
   .faq {
-  margin-top: 50px;
-}
+    margin-top: 50px;
+  }
 
+  /* Gaya paparan bagi .footer. */
   .footer {
-  flex-wrap: wrap;
-  padding-top: 35px;
-  gap: 25px;
-}
+    flex-wrap: wrap;
+    padding-top: 35px;
+    gap: 25px;
+  }
 
+  /* Gaya paparan bagi .footer .text-link. */
   .footer .text-link {
-  display: none;
-}
+    display: none;
+  }
 
+  /* Gaya paparan bagi .footer-brand. */
   .footer-brand {
-  font-size: 24px;
-}
+    font-size: 24px;
+  }
 
+  /* Gaya paparan bagi dialog. */
   dialog {
-  padding: 28px 22px;
-}
-
+    padding: 28px 22px;
+  }
 }
 
 /* Hormati pengguna yang memilih pergerakan minimum. Tempoh peralihan tetap 2 saat. */
 @media (prefers-reduced-motion: reduce) {
   html {
-  scroll-behavior: auto;
-}
+    scroll-behavior: auto;
+  }
 
-  *, *::before, *::after {
-  animation: none !important;
-  transition: none !important;
-}
-
+  /* Gaya paparan bagi *, *::before, *::after. */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

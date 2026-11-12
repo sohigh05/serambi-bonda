@@ -2,252 +2,301 @@
    Isi nombor dengan kod negara tanpa +, ruang atau sengkang.
    Contoh format Malaysia: 60 diikuti nombor tanpa sifar awal.
    Nombor ini ialah nombor Affendi Ahmad untuk pertanyaan homestay. */
-const nomborWhatsApp = '601111248074';
+const nomborWhatsApp = "601111248074";
 const masaPeralihan = 2000;
 const nomborSah = /^[1-9]\d{7,14}$/.test(nomborWhatsApp);
 
 /* 2. ELEMEN HALAMAN */
-const pages = document.querySelectorAll('.page');
-const curtain = document.getElementById('curtain');
-const curtainText = document.getElementById('curtain-text');
-const main = document.getElementById('main');
-const dialog = document.getElementById('message-dialog');
-const form = document.getElementById('booking-form');
-const checkIn = document.getElementById('check-in');
-const checkOut = document.getElementById('check-out');
-let halamanAktif = 'utama';
+const pages = document.querySelectorAll(".page");
+const curtain = document.getElementById("curtain");
+const curtainText = document.getElementById("curtain-text");
+const main = document.getElementById("main");
+const dialog = document.getElementById("message-dialog");
+const form = document.getElementById("booking-form");
+const checkIn = document.getElementById("check-in");
+const checkOut = document.getElementById("check-out");
+let halamanAktif = "utama";
 let transitionTimer;
 
 // Teks butang ikut sama ada nombor pemilik sudah dimasukkan atau belum.
 if (nomborSah) {
-  document.querySelector('#booking-form button[type="submit"]').innerHTML = 'Sediakan mesej WhatsApp <span>↗</span>';
-  document.querySelector('#booking-form .draft-note').textContent = 'Pertanyaan akan dibuka dalam WhatsApp selepas anda menyemak mesej.';
+  document.querySelector('#booking-form button[type="submit"]').innerHTML =
+    "Sediakan mesej WhatsApp <span>↗</span>";
+  document.querySelector("#booking-form .draft-note").textContent =
+    "Pertanyaan akan dibuka dalam WhatsApp selepas anda menyemak mesej.";
 }
 
 /* 3. NAVIGASI — empat halaman dalam satu fail supaya mudah dibuka terus.
    Hash URL juga menyokong butang Back / Forward dalam browser. */
 function bacaHalaman() {
   const id = window.location.hash.slice(1);
-  return ['utama', 'ruang', 'aktiviti', 'hubungi'].includes(id) ? id : 'utama';
+  return ["utama", "ruang", "aktiviti", "hubungi"].includes(id) ? id : "utama";
 }
 
+// Paparkan halaman pilihan dan tandakan pautan navigasi yang sedang aktif.
 function paparHalaman(id, fokus = true) {
   pages.forEach(function (page) {
     page.hidden = page.id !== id;
   });
 
-  document.querySelectorAll('.desktop-nav a, .mobile-nav a').forEach(function (link) {
-    if (link.getAttribute('href') === '#' + id) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-  });
+  document
+    .querySelectorAll(".desktop-nav a, .mobile-nav a")
+    .forEach(function (link) {
+      if (link.getAttribute("href") === "#" + id) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
 
   halamanAktif = id;
-  const nama = { utama: 'Utama', ruang: 'Ruang Rumah', aktiviti: 'Aktiviti', hubungi: 'Hubungi' };
-  document.title = nama[id] + ' — Serambi Bonda';
-  window.scrollTo({ top: 0, behavior: 'instant' });
-  if (fokus) document.getElementById('title-' + id).focus({ preventScroll: true });
+  const nama = {
+    utama: "Utama",
+    ruang: "Ruang Rumah",
+    aktiviti: "Aktiviti",
+    hubungi: "Hubungi",
+  };
+  document.title = nama[id] + " — Serambi Bonda";
+  window.scrollTo({ top: 0, behavior: "instant" });
+  if (fokus)
+    document.getElementById("title-" + id).focus({ preventScroll: true });
 }
 
+// Paparkan animasi selama dua saat sebelum membuka halaman seterusnya.
 function tukarHalaman(id, pembukaan = false) {
   clearTimeout(transitionTimer);
-  curtainText.textContent = pembukaan ? 'Selamat datang ke serambi.' : 'Melangkah ke ruang seterusnya…';
+  curtainText.textContent = pembukaan
+    ? "Selamat datang ke serambi."
+    : "Melangkah ke ruang seterusnya…";
   curtain.hidden = false;
-  document.body.classList.add('transitioning');
+  document.body.classList.add("transitioning");
   // Inert menghalang fokus papan kekunci pada kandungan di belakang loading.
-  document.querySelector('.header').inert = true;
-  document.querySelector('.mobile-nav').inert = true;
-  document.querySelector('.footer').inert = true;
+  document.querySelector(".header").inert = true;
+  document.querySelector(".mobile-nav").inert = true;
+  document.querySelector(".footer").inert = true;
   main.inert = true;
-  main.setAttribute('aria-busy', 'true');
+  main.setAttribute("aria-busy", "true");
 
   transitionTimer = setTimeout(function () {
     main.inert = false;
-    document.querySelector('.header').inert = false;
-    document.querySelector('.mobile-nav').inert = false;
-    document.querySelector('.footer').inert = false;
+    document.querySelector(".header").inert = false;
+    document.querySelector(".mobile-nav").inert = false;
+    document.querySelector(".footer").inert = false;
     paparHalaman(id, !pembukaan);
     curtain.hidden = true;
-    document.body.classList.remove('transitioning');
-    main.removeAttribute('aria-busy');
-    if (window.location.hash === '#kisah') document.getElementById('kisah').scrollIntoView();
+    document.body.classList.remove("transitioning");
+    main.removeAttribute("aria-busy");
+    if (window.location.hash === "#kisah")
+      document.getElementById("kisah").scrollIntoView();
     if (pembukaan) setTimeout(bukaTawaranPasang, 250);
   }, masaPeralihan);
 }
 
-window.addEventListener('hashchange', function () {
+// Kesan pertukaran halaman melalui pautan serta butang kembali pelayar.
+window.addEventListener("hashchange", function () {
   const tujuan = bacaHalaman();
   if (tujuan !== halamanAktif || !curtain.hidden) tukarHalaman(tujuan);
 });
 
+// Mulakan halaman dan kemas kini tahun hak cipta.
 paparHalaman(bacaHalaman(), false);
 tukarHalaman(bacaHalaman(), true);
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
 /* 4. GALERI FOTO — susunan ikut gambar yang diberi oleh keluarga. */
 const tajukFoto = [
-  'Bilik tidur bercadar biru', 'Ruang tamu dan televisyen',
-  'Bilik tidur bercadar corak hati', 'Mesin basuh dan peti sejuk',
-  'Sudut duduk', 'Bilik air', 'Almari dan meja solek',
-  'Penyaman udara di bilik', 'Ruang pancuran mandi',
-  'Pandangan hadapan rumah', 'Pandangan rumah dan halaman',
-  'Ruang tamu dari sudut lain', 'Laluan kampung', 'Ruang dapur'
+  "Bilik tidur bercadar biru",
+  "Ruang tamu dan televisyen",
+  "Bilik tidur bercadar corak hati",
+  "Mesin basuh dan peti sejuk",
+  "Sudut duduk",
+  "Bilik air",
+  "Almari dan meja solek",
+  "Penyaman udara di bilik",
+  "Ruang pancuran mandi",
+  "Pandangan hadapan rumah",
+  "Pandangan rumah dan halaman",
+  "Ruang tamu dari sudut lain",
+  "Laluan kampung",
+  "Ruang dapur",
 ];
 
-const galeri = document.getElementById('gallery');
-const photoDialog = document.getElementById('photo-dialog');
+const galeri = document.getElementById("gallery");
+const photoDialog = document.getElementById("photo-dialog");
 
 tajukFoto.forEach(function (tajuk, index) {
-  const nombor = String(index + 1).padStart(2, '0');
-  const laluan = 'images/foto-' + nombor + '.jpg';
-  const butang = document.createElement('button');
-  const gambar = document.createElement('img');
-  const kapsyen = document.createElement('span');
+  const nombor = String(index + 1).padStart(2, "0");
+  const laluan = "images/foto-" + nombor + ".jpg";
+  const butang = document.createElement("button");
+  const gambar = document.createElement("img");
+  const kapsyen = document.createElement("span");
 
-  butang.type = 'button';
-  butang.className = 'gallery-item';
-  butang.setAttribute('aria-label', 'Lihat foto: ' + tajuk);
+  butang.type = "button";
+  butang.className = "gallery-item";
+  butang.setAttribute("aria-label", "Lihat foto: " + tajuk);
   gambar.src = laluan;
   gambar.alt = tajuk;
-  gambar.loading = 'lazy';
+  gambar.loading = "lazy";
   kapsyen.textContent = tajuk;
   butang.append(gambar, kapsyen);
   galeri.append(butang);
 
-  butang.addEventListener('click', function () {
-    document.getElementById('large-photo').src = laluan;
-    document.getElementById('large-photo').alt = tajuk;
-    document.getElementById('photo-caption').textContent = tajuk;
+  butang.addEventListener("click", function () {
+    document.getElementById("large-photo").src = laluan;
+    document.getElementById("large-photo").alt = tajuk;
+    document.getElementById("photo-caption").textContent = tajuk;
     photoDialog.showModal();
   });
 });
 
-document.getElementById('close-photo').addEventListener('click', function () {
+document.getElementById("close-photo").addEventListener("click", function () {
   photoDialog.close();
 });
 
 /* 6. TARIKH — guna tarikh tempatan, bukan tarikh UTC. */
+// Tukarkan tarikh tempatan kepada format yang diterima oleh borang.
 function tarikhInput(date) {
   const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return year + '-' + month + '-' + day;
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return year + "-" + month + "-" + day;
 }
 
+// Hadkan pilihan tarikh supaya tarikh keluar selepas tarikh masuk.
 function kemasKiniTarikh() {
   checkIn.min = tarikhInput(new Date());
   const asas = checkIn.value || checkIn.min;
-  const esok = new Date(asas + 'T12:00:00');
+  const esok = new Date(asas + "T12:00:00");
   esok.setDate(esok.getDate() + 1);
   checkOut.min = tarikhInput(esok);
-  checkOut.setCustomValidity('');
+  checkOut.setCustomValidity("");
   if (checkOut.value && checkOut.value < checkOut.min) {
-    checkOut.setCustomValidity('Tarikh keluar mesti selepas tarikh masuk.');
+    checkOut.setCustomValidity("Tarikh keluar mesti selepas tarikh masuk.");
   }
 }
 
-checkIn.addEventListener('change', kemasKiniTarikh);
-checkOut.addEventListener('change', kemasKiniTarikh);
+checkIn.addEventListener("change", kemasKiniTarikh);
+checkOut.addEventListener("change", kemasKiniTarikh);
 kemasKiniTarikh();
 
+// Paparkan tarikh dalam bentuk yang mudah dibaca dalam mesej.
 function tarikhCantik(value) {
-  return new Date(value + 'T12:00:00').toLocaleDateString('ms-MY', {
-    day: 'numeric', month: 'long', year: 'numeric'
+  return new Date(value + "T12:00:00").toLocaleDateString("ms-MY", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 }
 
 /* 7. SEDIAKAN MESEJ — tiada tempahan atau pembayaran dihantar automatik. */
-form.addEventListener('submit', function (event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
   kemasKiniTarikh();
   if (!form.reportValidity()) return;
 
-  const nama = document.getElementById('guest-name').value.trim();
-  const nota = document.getElementById('note').value.trim();
-  const tetamu = document.getElementById('guests').value;
+  const nama = document.getElementById("guest-name").value.trim();
+  const nota = document.getElementById("note").value.trim();
+  const tetamu = document.getElementById("guests").value;
   const mesej = [
-    'Assalamualaikum Serambi Bonda!',
-    nama ? 'Nama saya ' + nama + '.' : 'Saya berminat untuk menginap.',
-    '',
-    'Tarikh masuk: ' + tarikhCantik(checkIn.value),
-    'Tarikh keluar: ' + tarikhCantik(checkOut.value),
-    'Jumlah tetamu: ' + tetamu + ' orang',
-    ...(nota ? ['Pertanyaan: ' + nota] : []),
-    '',
-    'Mohon maklumat tentang ketersediaan dan kadar penginapan bagi tarikh tersebut. Terima kasih.'
-  ].join('\n');
+    "Assalamualaikum Serambi Bonda!",
+    nama ? "Nama saya " + nama + "." : "Saya berminat untuk menginap.",
+    "",
+    "Tarikh masuk: " + tarikhCantik(checkIn.value),
+    "Tarikh keluar: " + tarikhCantik(checkOut.value),
+    "Jumlah tetamu: " + tetamu + " orang",
+    ...(nota ? ["Pertanyaan: " + nota] : []),
+    "",
+    "Mohon maklumat tentang ketersediaan dan kadar penginapan bagi tarikh tersebut. Terima kasih.",
+  ].join("\n");
 
-  document.getElementById('message-preview').value = mesej;
-  document.getElementById('copy-status').textContent = '';
-  const link = document.getElementById('whatsapp-link');
+  document.getElementById("message-preview").value = mesej;
+  document.getElementById("copy-status").textContent = "";
+  const link = document.getElementById("whatsapp-link");
   link.hidden = !nomborSah;
   if (nomborSah) {
-    link.href = 'https://wa.me/' + nomborWhatsApp + '?text=' + encodeURIComponent(mesej);
-    document.getElementById('whatsapp-hint').textContent = 'Semak mesej ini, kemudian buka WhatsApp untuk menghantarnya kepada pemilik.';
+    link.href =
+      "https://wa.me/" + nomborWhatsApp + "?text=" + encodeURIComponent(mesej);
+    document.getElementById("whatsapp-hint").textContent =
+      "Semak mesej ini, kemudian buka WhatsApp untuk menghantarnya kepada pemilik.";
   }
   dialog.showModal();
 });
 
 /* 8. PWA — service worker berfungsi di HTTPS atau localhost sahaja. */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('./service-worker.js').catch(function (error) {
-      console.warn('PWA tidak dapat didaftarkan:', error);
-    });
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .catch(function (error) {
+        console.warn("PWA tidak dapat didaftarkan:", error);
+      });
   });
 }
 
 /* 9. PEMASANGAN — popup menawarkan aplikasi, tetapi pengguna tetap memilih sendiri. */
-const installDialog = document.getElementById('install-dialog');
-const installButton = document.getElementById('install-button');
-const installSteps = document.getElementById('install-steps');
-const installVisualGuide = document.getElementById('install-ios-guide');
-const installDescription = document.getElementById('install-description');
-const installReopen = document.getElementById('install-reopen');
+const installDialog = document.getElementById("install-dialog");
+const installButton = document.getElementById("install-button");
+const installSteps = document.getElementById("install-steps");
+const installVisualGuide = document.getElementById("install-ios-guide");
+const installDescription = document.getElementById("install-description");
+const installReopen = document.getElementById("install-reopen");
 let installPrompt = null;
 
+// Semak sama ada laman dibuka sebagai aplikasi pada peranti.
 function sudahDipasang() {
-  return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    navigator.standalone === true
+  );
 }
 
+// Pilih panduan pemasangan mengikut pelayar dan peranti pengguna.
 function kemasKiniTawaranPasang() {
-  const telefonApple = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const telefonApple =
+    /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   const telefonAndroid = /Android/i.test(navigator.userAgent);
-  const safariMac = /Macintosh/.test(navigator.userAgent) &&
-    /Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg/.test(navigator.userAgent);
+  const safariMac =
+    /Macintosh/.test(navigator.userAgent) &&
+    /Safari/.test(navigator.userAgent) &&
+    !/Chrome|Chromium|Edg/.test(navigator.userAgent);
   installButton.hidden = !installPrompt || telefonApple;
   installVisualGuide.hidden = !telefonApple;
   installSteps.hidden = telefonApple;
 
   if (telefonApple) {
-    installDescription.textContent = 'Tambahkan laman ini pada skrin utama iPhone atau iPad anda untuk mengaksesnya sebagai aplikasi.';
+    installDescription.textContent =
+      "Tambahkan laman ini pada skrin utama iPhone atau iPad anda untuk mengaksesnya sebagai aplikasi.";
   } else if (telefonAndroid) {
-    installSteps.textContent = 'Android: tekan Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, buka menu Chrome dan pilih “Install app” atau “Add to Home screen”.';
+    installSteps.textContent =
+      "Android: tekan Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, buka menu Chrome dan pilih “Install app” atau “Add to Home screen”.";
   } else if (safariMac) {
-    installSteps.textContent = 'Safari pada Mac: buka menu “Share”, pilih “Add to Dock”, kemudian pilih “Add”.';
+    installSteps.textContent =
+      "Safari pada Mac: buka menu “Share”, pilih “Add to Dock”, kemudian pilih “Add”.";
   } else {
-    installSteps.textContent = 'Komputer: klik Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, gunakan ikon pemasangan pada bar alamat atau menu Chrome atau Edge.';
+    installSteps.textContent =
+      "Komputer: klik Pasang aplikasi jika butang tersebut dipaparkan. Jika tiada, gunakan ikon pemasangan pada bar alamat atau menu Chrome atau Edge.";
   }
 }
 
+// Buka dialog pemasangan apabila laman belum digunakan sebagai aplikasi.
 function bukaTawaranPasang(manual = false) {
-  const lamanSelamat = location.protocol === 'https:' || location.hostname === 'localhost';
-  if ((!lamanSelamat && !manual) || sudahDipasang() || installDialog.open) return;
+  const lamanSelamat =
+    location.protocol === "https:" || location.hostname === "localhost";
+  if ((!lamanSelamat && !manual) || sudahDipasang() || installDialog.open)
+    return;
   kemasKiniTawaranPasang();
   installDialog.showModal();
-  document.getElementById('install-title').focus({ preventScroll: true });
+  document.getElementById("install-title").focus({ preventScroll: true });
 }
 
-window.addEventListener('beforeinstallprompt', function (event) {
+window.addEventListener("beforeinstallprompt", function (event) {
   event.preventDefault();
   installPrompt = event;
   kemasKiniTawaranPasang();
 });
 
-installButton.addEventListener('click', async function () {
+installButton.addEventListener("click", async function () {
   if (!installPrompt) return;
   const prompt = installPrompt;
   installPrompt = null;
@@ -256,44 +305,47 @@ installButton.addEventListener('click', async function () {
     await prompt.prompt();
     await prompt.userChoice;
   } catch (error) {
-    console.warn('Pilihan pemasangan tidak tersedia:', error);
+    console.warn("Pilihan pemasangan tidak tersedia:", error);
   }
   kemasKiniTawaranPasang();
 });
 
-window.addEventListener('appinstalled', function () {
+window.addEventListener("appinstalled", function () {
   installPrompt = null;
   if (installDialog.open) installDialog.close();
   installReopen.hidden = true;
 });
 
 installReopen.hidden = sudahDipasang();
-installReopen.addEventListener('click', function () {
+installReopen.addEventListener("click", function () {
   bukaTawaranPasang(true);
 });
 
-document.getElementById('close-install').addEventListener('click', function () {
+document.getElementById("close-install").addEventListener("click", function () {
   installDialog.close();
 });
 
-document.getElementById('install-later').addEventListener('click', function () {
+document.getElementById("install-later").addEventListener("click", function () {
   installDialog.close();
 });
 
-document.getElementById('close-dialog').addEventListener('click', function () {
+document.getElementById("close-dialog").addEventListener("click", function () {
   dialog.close();
 });
 
-document.getElementById('copy-message').addEventListener('click', async function () {
-  const preview = document.getElementById('message-preview');
-  const status = document.getElementById('copy-status');
-  try {
-    await navigator.clipboard.writeText(preview.value);
-    status.textContent = 'Mesej berjaya disalin.';
-  } catch (error) {
-    // Sesetengah browser menyekat clipboard apabila dibuka sebagai fail tempatan.
-    preview.focus();
-    preview.select();
-    status.textContent = 'Pilih Salin pada peranti anda, atau tekan Ctrl+C / Command+C.';
-  }
-});
+document
+  .getElementById("copy-message")
+  .addEventListener("click", async function () {
+    const preview = document.getElementById("message-preview");
+    const status = document.getElementById("copy-status");
+    try {
+      await navigator.clipboard.writeText(preview.value);
+      status.textContent = "Mesej berjaya disalin.";
+    } catch (error) {
+      // Sesetengah browser menyekat clipboard apabila dibuka sebagai fail tempatan.
+      preview.focus();
+      preview.select();
+      status.textContent =
+        "Pilih Salin pada peranti anda, atau tekan Ctrl+C / Command+C.";
+    }
+  });

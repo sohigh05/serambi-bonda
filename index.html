@@ -1,144 +1,837 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ms">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#203d32">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Serambi Bonda">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="description" content="Kenali Serambi Bonda, sebuah rumah keluarga di Kampung Ulu Kenderung, Gerik, Perak. Lihat ruang, cari lokasi dan rancang penginapan anda.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Serambi Bonda — Ada rindu di setiap sudut">
-  <meta property="og:description" content="Sebuah rumah keluarga di Kampung Ulu Kenderung, Gerik, Perak.">
-  <title>Serambi Bonda — Ada rindu di setiap sudut.</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=8">
-  <script src="script.js?v=8" defer></script>
-</head>
-<body>
-  <!-- Skrin pembukaan dan peralihan antara halaman. -->
-  <div class="curtain" id="curtain" aria-hidden="true" hidden>
-    <span class="curtain-mark">SB.</span><p id="curtain-text">Selamat datang ke serambi.</p><span class="loading-line"></span>
-  </div>
-  <div class="announcement">SEBUAH RUMAH. SERIBU KENANGAN. <span>GERIK, PERAK ↗</span></div>
-  <header class="header">
-    <a href="#utama" class="brand" aria-label="Serambi Bonda, halaman utama"><span class="brand-mark">sb<span>⌂</span></span><span>serambi bonda<small>RUMAH & KENANGAN</small></span></a>
-    <nav class="desktop-nav" aria-label="Navigasi utama">
-      <a href="#utama">Utama</a><a href="#ruang">Ruang Rumah</a><a href="#aktiviti">Aktiviti</a><a href="#hubungi">Hubungi</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#203d32" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Serambi Bonda" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta
+      name="description"
+      content="Kenali Serambi Bonda, sebuah rumah keluarga di Kampung Ulu Kenderung, Gerik, Perak. Lihat ruang, cari lokasi dan rancang penginapan anda."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Serambi Bonda — Ada rindu di setiap sudut"
+    />
+    <meta
+      property="og:description"
+      content="Sebuah rumah keluarga di Kampung Ulu Kenderung, Gerik, Perak."
+    />
+    <title>Serambi Bonda — Ada rindu di setiap sudut.</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="icons/icon-192.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+    <link rel="stylesheet" href="style.css?v=9" />
+    <script src="script.js?v=9" defer></script>
+  </head>
+  <body>
+    <!-- Skrin pembukaan dan peralihan antara halaman. -->
+    <div class="curtain" id="curtain" aria-hidden="true" hidden>
+      <span class="curtain-mark">SB.</span>
+      <p id="curtain-text">Selamat datang ke serambi.</p>
+      <span class="loading-line"></span>
+    </div>
+    <div class="announcement">
+      SEBUAH RUMAH. SERIBU KENANGAN.
+      <span>GERIK, PERAK ↗</span>
+    </div>
+
+    <!-- Bahagian header: susunan kandungan dan kawalan pengguna. -->
+    <header class="header">
+      <a href="#utama" class="brand" aria-label="Serambi Bonda, halaman utama">
+        <span class="brand-mark">
+          sb
+          <span>⌂</span>
+        </span>
+        <span>
+          serambi bonda
+          <small>RUMAH & KENANGAN</small>
+        </span>
+      </a>
+
+      <!-- Bahagian desktop-nav: susunan kandungan dan kawalan pengguna. -->
+      <nav class="desktop-nav" aria-label="Navigasi utama">
+        <a href="#utama">Utama</a>
+        <a href="#ruang">Ruang Rumah</a>
+        <a href="#aktiviti">Aktiviti</a>
+        <a href="#hubungi">Hubungi</a>
+      </nav>
+      <a href="#hubungi" class="button small header-cta">
+        Rancang percutian
+        <span>↗</span>
+      </a>
+    </header>
+
+    <main id="main">
+      <!-- HALAMAN 1: UTAMA -->
+
+      <!-- Bahagian page: susunan kandungan dan kawalan pengguna. -->
+      <section class="page" id="utama" aria-labelledby="title-utama">
+        <div class="hero wrap">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="tiny-star">✳</span>
+              PULANG KE RASA YANG DIRINDUI
+            </p>
+            <h1 id="title-utama" tabindex="-1">
+              Ada rindu
+              <br />
+              di setiap
+              <em>sudut.</em>
+            </h1>
+            <p class="intro">
+              Luangkan masa berehat daripada kesibukan harian dan eratkan
+              hubungan bersama insan tersayang. Selamat datang ke Serambi Bonda,
+              sebuah rumah keluarga di Gerik, Perak.
+            </p>
+            <div class="hero-actions">
+              <a href="#ruang" class="button">
+                Terokai kediaman kami
+                <span>↗</span>
+              </a>
+              <a href="#kisah" class="text-link">
+                Kenali kisahnya
+                <span>↓</span>
+              </a>
+            </div>
+            <div class="hero-note">
+              <span class="line-house">⌂</span>
+              <p>
+                Bukan sekadar tempat singgah.
+                <br />
+                <strong>Keselesaan seperti di kediaman sendiri.</strong>
+              </p>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-photo">
+              <img
+                src="images/foto-10.jpg"
+                alt="Pandangan hadapan rumah Serambi Bonda"
+                fetchpriority="high"
+              />
+              <span class="hero-photo-label">RUMAH BONDA · GERIK, PERAK</span>
+            </div>
+            <div class="round-stamp">
+              DARI HATI
+              <br />
+              <span>♡</span>
+              <br />
+              UNTUK KELUARGA
+            </div>
+            <div class="visual-caption">
+              <span>WARISAN SEBUAH KENANGAN</span>
+              <span>GERIK · PERAK, MALAYSIA</span>
+            </div>
+          </div>
+        </div>
+        <div class="values-strip">
+          <span>Ruang untuk bersama</span>
+          <i>✳</i>
+          <span>Ketenangan suasana kampung</span>
+          <i>✳</i>
+          <span>Kemesraan sebuah keluarga</span>
+          <i>✳</i>
+          <span>Kenangan yang tinggal</span>
+        </div>
+
+        <!-- Bahagian story wrap: susunan kandungan dan kawalan pengguna. -->
+
+        <section class="story wrap" id="kisah">
+          <div>
+            <p class="eyebrow">01 — CERITA DI SEBALIK SERAMBI</p>
+            <h2>
+              Dahulu kediaman bonda.
+              <br />
+              Kini, ruang
+              <em>kita.</em>
+            </h2>
+          </div>
+          <div class="story-copy">
+            <p>
+              Rumah ini bermula dengan kasih seorang ibu. Selepas pemergian
+              bonda, keluarga berhasrat untuk meneruskan nilai kasih sayang dan
+              kemesraan tersebut dengan menerima kehadiran tetamu.
+            </p>
+            <p>
+              Nama Serambi Bonda membawa ingatan itu — tempat menyambut,
+              bercerita dan meluangkan masa bersama. Semoga setiap yang singgah
+              dapat membawa pulang sedikit rasa tenangnya.
+            </p>
+            <span class="signature">Dengan kasih, keluarga Serambi Bonda</span>
+          </div>
+        </section>
+
+        <!-- Bahagian invitation wrap: susunan kandungan dan kawalan pengguna. -->
+        <section class="invitation wrap">
+          <span class="eyebrow">LUANGKAN MASA UNTUK BEREHAT</span>
+          <h2>
+            Percutian kecil.
+            <br />
+            Kenangan
+            <em>besar.</em>
+          </h2>
+          <a href="#hubungi" class="button light">
+            Rancang waktu bersama
+            <span>↗</span>
+          </a>
+          <span class="invitation-flower" aria-hidden="true">✳</span>
+        </section>
+      </section>
+
+      <!-- HALAMAN 2: RUANG RUMAH. Foto sebenar disusun di galeri bawah. -->
+
+      <!-- Bahagian page wrap inner-page: susunan kandungan dan kawalan pengguna. -->
+      <section
+        class="page wrap inner-page"
+        id="ruang"
+        aria-labelledby="title-ruang"
+        hidden
+      >
+        <p class="eyebrow">02 — RUANG UNTUK SEMUA</p>
+        <div class="page-heading">
+          <h1 id="title-ruang" tabindex="-1">
+            Penginapan yang selesa.
+            <br />
+            Kebersamaan yang
+            <em>bermakna.</em>
+          </h1>
+          <p>
+            Setiap ruang ada ceritanya. Pilih sudut kegemaran dan bayangkan masa
+            yang bakal diluangkan bersama.
+          </p>
+        </div>
+        <p class="notice">
+          Lihat foto sebenar rumah dan ruangnya. Hubungi pemilik untuk
+          mendapatkan maklumat terkini tentang kapasiti tetamu, kadar dan
+          butiran penginapan.
+        </p>
+        <div class="room-grid">
+          <!-- Bahagian room-card wide: susunan kandungan dan kawalan pengguna. -->
+          <article class="room-card wide">
+            <div class="room-photo">
+              <img
+                src="images/foto-02.jpg"
+                alt="Ruang tamu dengan sofa dan televisyen"
+                loading="lazy"
+              />
+            </div>
+            <div class="room-info">
+              <div>
+                <h2>Tempat cerita bersambung.</h2>
+                <p>Ruang tamu rumah.</p>
+              </div>
+              <span>01</span>
+            </div>
+          </article>
+
+          <!-- Bahagian room-card: susunan kandungan dan kawalan pengguna. -->
+          <article class="room-card">
+            <div class="room-photo">
+              <img
+                src="images/foto-01.jpg"
+                alt="Bilik dengan katil bercadar biru"
+                loading="lazy"
+              />
+            </div>
+            <div class="room-info">
+              <div>
+                <h2>Rehat tanpa tergesa.</h2>
+                <p>Antara ruang tidur yang dirakam.</p>
+              </div>
+              <span>02</span>
+            </div>
+          </article>
+
+          <!-- Bahagian room-card: susunan kandungan dan kawalan pengguna. -->
+          <article class="room-card">
+            <div class="room-photo">
+              <img
+                src="images/foto-14.jpg"
+                alt="Dapur dengan kabinet, dapur memasak dan sinki"
+                loading="lazy"
+              />
+            </div>
+            <div class="room-info">
+              <div>
+                <h2>Semeja, sekeluarga.</h2>
+                <p>Ruang dapur rumah.</p>
+              </div>
+              <span>03</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bahagian gallery-section: susunan kandungan dan kawalan pengguna. -->
+        <section class="gallery-section" aria-labelledby="gallery-title">
+          <p class="eyebrow">GALERI SERAMBI BONDA</p>
+          <h2 id="gallery-title">
+            Lihat setiap
+            <em>sudut.</em>
+          </h2>
+          <p class="muted">
+            Galeri ini memaparkan 14 gambar kediaman yang dikongsikan oleh
+            keluarga. Pilih gambar untuk melihat paparan yang lebih besar.
+          </p>
+          <div class="gallery" id="gallery"></div>
+        </section>
+
+        <!-- Bahagian amenities: susunan kandungan dan kawalan pengguna. -->
+        <section class="amenities">
+          <div>
+            <p class="eyebrow">PERSEDIAAN SEBELUM SINGGAH</p>
+            <h2>
+              Rancang dengan
+              <br />
+              <em>tenang.</em>
+            </h2>
+            <p class="muted">
+              Butiran penuh akan dikemas kini apabila disahkan oleh keluarga.
+            </p>
+          </div>
+          <ul>
+            <li>
+              01
+              <span>Dapatkan maklumat kapasiti tetamu</span>
+            </li>
+            <li>
+              02
+              <span>Semak kemudahan yang tersedia</span>
+            </li>
+            <li>
+              03
+              <span>Pastikan waktu masuk dan keluar</span>
+            </li>
+            <li>
+              04
+              <span>Dapatkan kadar bagi tarikh pilihan</span>
+            </li>
+          </ul>
+        </section>
+        <div class="bottom-cta">
+          <p>Sudahkah anda menemui ruang pilihan?</p>
+          <a href="#hubungi" class="button">Pertanyaan tentang penginapan ↗</a>
+        </div>
+      </section>
+
+      <!-- HALAMAN 3: AKTIVITI. Idea umum tanpa dakwaan jarak atau lokasi sebenar. -->
+
+      <!-- Bahagian page wrap inner-page: susunan kandungan dan kawalan pengguna. -->
+      <section
+        class="page wrap inner-page"
+        id="aktiviti"
+        aria-labelledby="title-aktiviti"
+        hidden
+      >
+        <p class="eyebrow">03 — PERLAHANKAN LANGKAH</p>
+        <div class="page-heading">
+          <h1 id="title-aktiviti" tabindex="-1">
+            Tidak perlu jauh.
+            <br />
+            Cukup
+            <em>bersama.</em>
+          </h1>
+          <p>
+            Isi hari dengan perkara sederhana. Secawan kopi, udara pagi dan masa
+            untuk berehat tanpa tergesa-gesa.
+          </p>
+        </div>
+        <p class="notice">
+          Idea untuk mengisi waktu bersama. Semak tempat dan aktiviti sekitar
+          dengan pemilik sebelum merancang perjalanan.
+        </p>
+        <div class="activity-list">
+          <!-- Bahagian article: susunan kandungan dan kawalan pengguna. -->
+          <article>
+            <div class="activity-photo">
+              <img
+                src="images/foto-05.jpg"
+                alt="Sudut duduk dengan dua kerusi dan meja kecil"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="eyebrow">01 / PAGI YANG TENANG</p>
+              <h2>
+                Kopi panas.
+                <br />
+                Angin pagi.
+              </h2>
+              <p>
+                Mulakan hari dengan sarapan bersama keluarga. Simpan telefon
+                seketika dan nikmati perbualan yang selalu tertangguh.
+              </p>
+              <span class="tag">Di rumah · Idea santai</span>
+            </div>
+          </article>
+
+          <!-- Bahagian article: susunan kandungan dan kawalan pengguna. -->
+          <article>
+            <div class="activity-photo">
+              <img
+                src="images/foto-13.jpg"
+                alt="Laluan kampung berhampiran rumah"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="eyebrow">02 / KENALI GERIK</p>
+              <h2>
+                Bersiar-siar sebentar.
+                <br />
+                Hirup ketenangan.
+              </h2>
+              <p>
+                Luangkan masa mengenali suasana Gerik. Dapatkan cadangan pemilik
+                tentang tempat makan dan lokasi bersiar-siar yang sesuai untuk
+                keluarga.
+              </p>
+              <span class="tag">Sekitar Gerik · Semak dengan pemilik</span>
+            </div>
+          </article>
+
+          <!-- Bahagian article: susunan kandungan dan kawalan pengguna. -->
+          <article>
+            <div class="activity-photo">
+              <img
+                src="images/foto-12.jpg"
+                alt="Ruang tamu dengan sofa dan kerusi"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="eyebrow">03 / MALAM MILIK KITA</p>
+              <h2>
+                Kongsikan cerita.
+                <br />
+                Cipta kenangan.
+              </h2>
+              <p>
+                Bawa permainan papan kegemaran, makan bersama atau sekadar
+                bercerita. Kadang-kadang, itulah percutian yang paling dirindui.
+              </p>
+              <span class="tag">Bersama keluarga · Idea santai</span>
+            </div>
+          </article>
+        </div>
+        <div class="bottom-cta">
+          <p>Masa bersama bermula di sini.</p>
+          <a href="#hubungi" class="button">Rancang percutian ↗</a>
+        </div>
+      </section>
+
+      <!-- HALAMAN 4: BORANG PERTANYAAN -->
+
+      <!-- Bahagian page wrap inner-page: susunan kandungan dan kawalan pengguna. -->
+      <section
+        class="page wrap inner-page"
+        id="hubungi"
+        aria-labelledby="title-hubungi"
+        hidden
+      >
+        <p class="eyebrow">04 — PINTU KAMI, CERITA ANDA</p>
+        <div class="page-heading">
+          <h1 id="title-hubungi" tabindex="-1">
+            Selamat berkunjung
+            <br />
+            ke
+            <em>serambi.</em>
+          </h1>
+          <p>
+            Pilih tarikh penginapan anda. Lengkapkan borang untuk menyediakan
+            mesej pertanyaan tentang kadar dan ketersediaan penginapan.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-details">
+            <h2>
+              Mulakan dengan
+              <br />
+              satu salam.
+            </h2>
+            <address>
+              Lot 9311A, Kg Ulu Kenderung
+              <br />
+              33300 Gerik
+              <br />
+              Perak, Malaysia
+            </address>
+            <p class="muted">
+              Cari alamat ini di Google Maps sebelum bertolak. Pin sebenar perlu
+              disahkan oleh pemilik.
+            </p>
+            <div class="contact-rule">
+              <span>HUBUNGI</span>
+              <p>Affendi Ahmad</p>
+              <a class="contact-number" href="tel:+601111248074">
+                +60 11-1124 8074
+              </a>
+              <br />
+              <a
+                class="contact-whatsapp"
+                href="https://wa.me/601111248074?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Serambi%20Bonda."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp Affendi ↗
+              </a>
+            </div>
+            <div class="contact-rule">
+              <span>WAKTU MASUK / KELUAR</span>
+              <p>Sila dapatkan pengesahan pemilik semasa membuat pertanyaan.</p>
+            </div>
+            <div class="contact-rule">
+              <span>KADAR PENGINAPAN</span>
+              <p>
+                Sila hubungi pemilik untuk mendapatkan kadar bagi tarikh pilihan
+                anda.
+              </p>
+            </div>
+            <div class="map-panel">
+              <iframe
+                title="Peta Google Maps untuk Lot 9311A, Kampung Ulu Kenderung, Gerik"
+                src="https://maps.google.com/maps?q=LOT%209311A%2C%20KG%20ULU%20KENDERUNG%2C%2033300%20GERIK%2C%20PERAK&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=LOT%209311A%2C%20KG%20ULU%20KENDERUNG%2C%2033300%20GERIK%2C%20PERAK"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-link"
+              >
+                Buka alamat di Google Maps ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Bahagian booking-form: susunan kandungan dan kawalan pengguna. -->
+          <form id="booking-form" class="booking-form">
+            <div class="form-title">
+              <h2>Rancang waktu rehat.</h2>
+              <span>♡</span>
+            </div>
+            <p class="muted">
+              Pertanyaan sahaja. Kekosongan disahkan oleh pemilik.
+            </p>
+            <label for="guest-name">
+              Nama anda
+              <span>(pilihan)</span>
+            </label>
+            <input
+              id="guest-name"
+              name="name"
+              autocomplete="name"
+              placeholder="Nama panggilan anda"
+              maxlength="80"
+            />
+            <div class="form-row">
+              <div>
+                <label for="check-in">Tarikh masuk</label>
+                <input id="check-in" name="checkIn" type="date" required />
+              </div>
+              <div>
+                <label for="check-out">Tarikh keluar</label>
+                <input id="check-out" name="checkOut" type="date" required />
+              </div>
+            </div>
+            <label for="guests">Jumlah tetamu</label>
+            <input
+              id="guests"
+              name="guests"
+              type="number"
+              min="1"
+              step="1"
+              inputmode="numeric"
+              placeholder="Contoh: 5"
+              required
+            />
+            <small class="field-note">
+              Nyatakan bilangan tetamu dan dapatkan pengesahan kapasiti daripada
+              pemilik.
+            </small>
+            <label for="note">
+              Pertanyaan tambahan
+              <span>(pilihan)</span>
+            </label>
+            <textarea
+              id="note"
+              name="note"
+              rows="3"
+              maxlength="600"
+              placeholder="Contoh: Adakah sesuai untuk warga emas?"
+            ></textarea>
+            <button class="button" type="submit">
+              Sediakan mesej WhatsApp
+              <span>↗</span>
+            </button>
+            <small class="draft-note">
+              Pertanyaan akan dibuka dalam WhatsApp selepas anda menyemak mesej.
+            </small>
+          </form>
+        </div>
+
+        <!-- Bahagian faq: susunan kandungan dan kawalan pengguna. -->
+        <section class="faq">
+          <p class="eyebrow">SEBELUM ANDA SINGGAH</p>
+          <h2>Soalan lazim.</h2>
+          <details>
+            <summary>Adakah mengisi borang terus mengesahkan tempahan?</summary>
+            <p>
+              Tidak. Borang ini menyediakan mesej pertanyaan sahaja. Pemilik
+              perlu mengesahkan kekosongan, harga dan cara tempahan.
+            </p>
+          </details>
+          <details>
+            <summary>Bagaimanakah cara mendapatkan kadar penginapan?</summary>
+            <p>
+              Nyatakan tarikh dan jumlah tetamu melalui borang. Pemilik akan
+              memaklumkan kadar untuk tarikh tersebut.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Di manakah saya boleh mendapatkan maklumat kemudahan?
+            </summary>
+            <p>
+              Senarai kemudahan dan foto sebenar akan dikemas kini selepas
+              disahkan oleh keluarga. Anda boleh bertanya terus kepada pemilik.
+            </p>
+          </details>
+        </section>
+      </section>
+    </main>
+
+    <!-- Bahagian wrap footer: susunan kandungan dan kawalan pengguna. -->
+
+    <footer class="wrap footer">
+      <a class="footer-brand" href="#utama">
+        serambi bonda
+        <span>Rumah yang menyimpan kasih.</span>
+      </a>
+      <p>
+        Lot 9311A, Kg Ulu Kenderung
+        <br />
+        33300 Gerik, Perak
+        <br />
+        <small>
+          ©
+          <span id="year"></span>
+          Serambi Bonda
+        </small>
+      </p>
+      <button id="install-reopen" class="install-reopen" type="button">
+        Panduan pemasangan aplikasi ↗
+      </button>
+      <a href="#hubungi" class="text-link">Mari berkenalan ↗</a>
+    </footer>
+
+    <!-- Bahagian mobile-nav: susunan kandungan dan kawalan pengguna. -->
+    <nav class="mobile-nav" aria-label="Navigasi telefon">
+      <a href="#utama">
+        <span aria-hidden="true">⌂</span>
+        Utama
+      </a>
+      <a href="#ruang">
+        <span aria-hidden="true">▦</span>
+        Ruang
+      </a>
+      <a href="#aktiviti">
+        <span aria-hidden="true">☼</span>
+        Aktiviti
+      </a>
+      <a href="#hubungi">
+        <span aria-hidden="true">✉</span>
+        Hubungi
+      </a>
     </nav>
-    <a href="#hubungi" class="button small header-cta">Rancang percutian <span>↗</span></a>
-  </header>
 
-  <main id="main">
-    <!-- HALAMAN 1: UTAMA -->
-    <section class="page" id="utama" aria-labelledby="title-utama">
-      <div class="hero wrap">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="tiny-star">✳</span> PULANG KE RASA YANG DIRINDUI</p>
-          <h1 id="title-utama" tabindex="-1">Ada rindu<br>di setiap <em>sudut.</em></h1>
-          <p class="intro">Luangkan masa berehat daripada kesibukan harian dan eratkan hubungan bersama insan tersayang. Selamat datang ke Serambi Bonda, sebuah rumah keluarga di Gerik, Perak.</p>
-          <div class="hero-actions"><a href="#ruang" class="button">Terokai kediaman kami <span>↗</span></a><a href="#kisah" class="text-link">Kenali kisahnya <span>↓</span></a></div>
-          <div class="hero-note"><span class="line-house">⌂</span><p>Bukan sekadar tempat singgah.<br><strong>Keselesaan seperti di kediaman sendiri.</strong></p></div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-photo"><img src="images/foto-10.jpg" alt="Pandangan hadapan rumah Serambi Bonda" fetchpriority="high"><span class="hero-photo-label">RUMAH BONDA · GERIK, PERAK</span></div>
-          <div class="round-stamp">DARI HATI<br><span>♡</span><br>UNTUK KELUARGA</div>
-          <div class="visual-caption"><span>WARISAN SEBUAH KENANGAN</span><span>GERIK · PERAK, MALAYSIA</span></div>
-        </div>
+    <!-- Tawaran aplikasi muncul sekali selepas laman dibuka dalam pelayar. -->
+
+    <!-- Bahagian install-dialog: susunan kandungan dan kawalan pengguna. -->
+    <dialog
+      id="install-dialog"
+      class="install-dialog"
+      aria-labelledby="install-title"
+      lang="ms"
+    >
+      <button
+        id="close-install"
+        class="close-dialog"
+        type="button"
+        aria-label="Tutup panduan pemasangan"
+      >
+        ×
+      </button>
+      <img class="install-icon" src="icons/icon-192.png" alt="" />
+      <p class="eyebrow">SERAMBI BONDA PADA PERANTI ANDA</p>
+      <h2 id="install-title" tabindex="-1">Pasang Serambi Bonda.</h2>
+      <p id="install-description">
+        Akses laman ini sebagai aplikasi melalui skrin utama peranti atau
+        komputer anda.
+      </p>
+
+      <!-- Gambar langkah sebenar untuk Safari pada iPhone dan iPad. -->
+      <div id="install-ios-guide" class="install-visual-guide" hidden>
+        <p class="guide-note">
+          Gunakan Safari. Jika laman ini dibuka melalui aplikasi lain, pilih
+          “Open in Safari” terlebih dahulu. Pilih tangkapan skrin untuk melihat
+          paparan yang lebih besar.
+        </p>
+        <ol class="guide-list">
+          <li class="guide-step">
+            <div class="guide-step-heading">
+              <span>1</span>
+              <div>
+                <h3>Buka menu halaman</h3>
+                <p>
+                  Tekan ikon menu di sebelah alamat laman. Jika butang “Share”
+                  dipaparkan, tekan butang tersebut.
+                </p>
+              </div>
+            </div>
+            <a
+              href="images/install-step-1.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="View the Safari page menu screenshot at full size"
+            >
+              <img
+                src="images/install-step-1.png"
+                alt="Safari address bar showing the page menu icon"
+                width="1178"
+                height="284"
+              />
+            </a>
+          </li>
+          <li class="guide-step">
+            <div class="guide-step-heading">
+              <span>2</span>
+              <div>
+                <h3>Tekan “Share”</h3>
+                <p>Pilih “Share” (Kongsi) dalam menu halaman.</p>
+              </div>
+            </div>
+            <a
+              href="images/install-step-2.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="View the Share menu screenshot at full size"
+            >
+              <img
+                src="images/install-step-2.png"
+                alt="Safari page menu with the Share option visible"
+                width="735"
+                height="600"
+                loading="lazy"
+              />
+            </a>
+          </li>
+          <li class="guide-step">
+            <div class="guide-step-heading">
+              <span>3</span>
+              <div>
+                <h3>Tambah pada skrin utama</h3>
+                <p>
+                  Tatal menu perkongsian, kemudian tekan “Add to Home Screen”
+                  (Tambah pada Skrin Utama).
+                </p>
+              </div>
+            </div>
+            <a
+              href="images/install-step-3.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="View the Add to Home Screen screenshot at full size"
+            >
+              <img
+                src="images/install-step-3.png"
+                alt="iPhone Share sheet showing Add to Home Screen"
+                width="1090"
+                height="844"
+                loading="lazy"
+              />
+            </a>
+          </li>
+        </ol>
+        <p class="guide-finish">
+          Akhir sekali, aktifkan “Open as Web App” jika pilihan tersebut
+          tersedia, kemudian tekan
+          <strong>“Add” (Tambah)</strong>
+          .
+        </p>
       </div>
-      <div class="values-strip"><span>Ruang untuk bersama</span><i>✳</i><span>Ketenangan suasana kampung</span><i>✳</i><span>Kemesraan sebuah keluarga</span><i>✳</i><span>Kenangan yang tinggal</span></div>
 
-      <section class="story wrap" id="kisah">
-        <div><p class="eyebrow">01 — CERITA DI SEBALIK SERAMBI</p><h2>Dahulu kediaman bonda.<br>Kini, ruang <em>kita.</em></h2></div>
-        <div class="story-copy"><p>Rumah ini bermula dengan kasih seorang ibu. Selepas pemergian bonda, keluarga berhasrat untuk meneruskan nilai kasih sayang dan kemesraan tersebut dengan menerima kehadiran tetamu.</p><p>Nama Serambi Bonda membawa ingatan itu — tempat menyambut, bercerita dan meluangkan masa bersama. Semoga setiap yang singgah dapat membawa pulang sedikit rasa tenangnya.</p><span class="signature">Dengan kasih, keluarga Serambi Bonda</span></div>
-      </section>
-      <section class="invitation wrap"><span class="eyebrow">LUANGKAN MASA UNTUK BEREHAT</span><h2>Percutian kecil.<br>Kenangan <em>besar.</em></h2><a href="#hubungi" class="button light">Rancang waktu bersama <span>↗</span></a><span class="invitation-flower" aria-hidden="true">✳</span></section>
-    </section>
-
-    <!-- HALAMAN 2: RUANG RUMAH. Foto sebenar disusun di galeri bawah. -->
-    <section class="page wrap inner-page" id="ruang" aria-labelledby="title-ruang" hidden>
-      <p class="eyebrow">02 — RUANG UNTUK SEMUA</p><div class="page-heading"><h1 id="title-ruang" tabindex="-1">Penginapan yang selesa.<br>Kebersamaan yang <em>bermakna.</em></h1><p>Setiap ruang ada ceritanya. Pilih sudut kegemaran dan bayangkan masa yang bakal diluangkan bersama.</p></div>
-      <p class="notice">Lihat foto sebenar rumah dan ruangnya. Hubungi pemilik untuk mendapatkan maklumat terkini tentang kapasiti tetamu, kadar dan butiran penginapan.</p>
-      <div class="room-grid">
-        <article class="room-card wide"><div class="room-photo"><img src="images/foto-02.jpg" alt="Ruang tamu dengan sofa dan televisyen" loading="lazy"></div><div class="room-info"><div><h2>Tempat cerita bersambung.</h2><p>Ruang tamu rumah.</p></div><span>01</span></div></article>
-        <article class="room-card"><div class="room-photo"><img src="images/foto-01.jpg" alt="Bilik dengan katil bercadar biru" loading="lazy"></div><div class="room-info"><div><h2>Rehat tanpa tergesa.</h2><p>Antara ruang tidur yang dirakam.</p></div><span>02</span></div></article>
-        <article class="room-card"><div class="room-photo"><img src="images/foto-14.jpg" alt="Dapur dengan kabinet, dapur memasak dan sinki" loading="lazy"></div><div class="room-info"><div><h2>Semeja, sekeluarga.</h2><p>Ruang dapur rumah.</p></div><span>03</span></div></article>
+      <p id="install-steps" class="install-steps"></p>
+      <div class="install-actions">
+        <button class="button" id="install-button" type="button" hidden>
+          Pasang aplikasi ↗
+        </button>
+        <button class="install-later" id="install-later" type="button">
+          Teruskan ke laman
+        </button>
       </div>
-      <section class="gallery-section" aria-labelledby="gallery-title">
-        <p class="eyebrow">GALERI SERAMBI BONDA</p>
-        <h2 id="gallery-title">Lihat setiap <em>sudut.</em></h2>
-        <p class="muted">Galeri ini memaparkan 14 gambar kediaman yang dikongsikan oleh keluarga. Pilih gambar untuk melihat paparan yang lebih besar.</p>
-        <div class="gallery" id="gallery"></div>
-      </section>
-      <section class="amenities"><div><p class="eyebrow">PERSEDIAAN SEBELUM SINGGAH</p><h2>Rancang dengan<br><em>tenang.</em></h2><p class="muted">Butiran penuh akan dikemas kini apabila disahkan oleh keluarga.</p></div><ul><li>01 <span>Dapatkan maklumat kapasiti tetamu</span></li><li>02 <span>Semak kemudahan yang tersedia</span></li><li>03 <span>Pastikan waktu masuk dan keluar</span></li><li>04 <span>Dapatkan kadar bagi tarikh pilihan</span></li></ul></section>
-      <div class="bottom-cta"><p>Sudahkah anda menemui ruang pilihan?</p><a href="#hubungi" class="button">Pertanyaan tentang penginapan ↗</a></div>
-    </section>
+    </dialog>
 
-    <!-- HALAMAN 3: AKTIVITI. Idea umum tanpa dakwaan jarak atau lokasi sebenar. -->
-    <section class="page wrap inner-page" id="aktiviti" aria-labelledby="title-aktiviti" hidden>
-      <p class="eyebrow">03 — PERLAHANKAN LANGKAH</p><div class="page-heading"><h1 id="title-aktiviti" tabindex="-1">Tidak perlu jauh.<br>Cukup <em>bersama.</em></h1><p>Isi hari dengan perkara sederhana. Secawan kopi, udara pagi dan masa untuk berehat tanpa tergesa-gesa.</p></div>
-      <p class="notice">Idea untuk mengisi waktu bersama. Semak tempat dan aktiviti sekitar dengan pemilik sebelum merancang perjalanan.</p>
-      <div class="activity-list">
-        <article><div class="activity-photo"><img src="images/foto-05.jpg" alt="Sudut duduk dengan dua kerusi dan meja kecil" loading="lazy"></div><div><p class="eyebrow">01 / PAGI YANG TENANG</p><h2>Kopi panas.<br>Angin pagi.</h2><p>Mulakan hari dengan sarapan bersama keluarga. Simpan telefon seketika dan nikmati perbualan yang selalu tertangguh.</p><span class="tag">Di rumah · Idea santai</span></div></article>
-        <article><div class="activity-photo"><img src="images/foto-13.jpg" alt="Laluan kampung berhampiran rumah" loading="lazy"></div><div><p class="eyebrow">02 / KENALI GERIK</p><h2>Bersiar-siar sebentar.<br>Hirup ketenangan.</h2><p>Luangkan masa mengenali suasana Gerik. Dapatkan cadangan pemilik tentang tempat makan dan lokasi bersiar-siar yang sesuai untuk keluarga.</p><span class="tag">Sekitar Gerik · Semak dengan pemilik</span></div></article>
-        <article><div class="activity-photo"><img src="images/foto-12.jpg" alt="Ruang tamu dengan sofa dan kerusi" loading="lazy"></div><div><p class="eyebrow">03 / MALAM MILIK KITA</p><h2>Kongsikan cerita.<br>Cipta kenangan.</h2><p>Bawa permainan papan kegemaran, makan bersama atau sekadar bercerita. Kadang-kadang, itulah percutian yang paling dirindui.</p><span class="tag">Bersama keluarga · Idea santai</span></div></article>
-      </div><div class="bottom-cta"><p>Masa bersama bermula di sini.</p><a href="#hubungi" class="button">Rancang percutian ↗</a></div>
-    </section>
+    <!-- Dialog membolehkan mesej disemak sebelum membuka WhatsApp. -->
 
-    <!-- HALAMAN 4: BORANG PERTANYAAN -->
-    <section class="page wrap inner-page" id="hubungi" aria-labelledby="title-hubungi" hidden>
-      <p class="eyebrow">04 — PINTU KAMI, CERITA ANDA</p><div class="page-heading"><h1 id="title-hubungi" tabindex="-1">Selamat berkunjung<br>ke <em>serambi.</em></h1><p>Pilih tarikh penginapan anda. Lengkapkan borang untuk menyediakan mesej pertanyaan tentang kadar dan ketersediaan penginapan.</p></div>
-      <div class="contact-grid"><div class="contact-details"><h2>Mulakan dengan<br>satu salam.</h2><address>Lot 9311A, Kg Ulu Kenderung<br>33300 Gerik<br>Perak, Malaysia</address><p class="muted">Cari alamat ini di Google Maps sebelum bertolak. Pin sebenar perlu disahkan oleh pemilik.</p><div class="contact-rule"><span>HUBUNGI</span><p>Affendi Ahmad</p><a class="contact-number" href="tel:+601111248074">+60 11-1124 8074</a><br><a class="contact-whatsapp" href="https://wa.me/601111248074?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Serambi%20Bonda." target="_blank" rel="noopener noreferrer">WhatsApp Affendi ↗</a></div><div class="contact-rule"><span>WAKTU MASUK / KELUAR</span><p>Sila dapatkan pengesahan pemilik semasa membuat pertanyaan.</p></div><div class="contact-rule"><span>KADAR PENGINAPAN</span><p>Sila hubungi pemilik untuk mendapatkan kadar bagi tarikh pilihan anda.</p></div><div class="map-panel"><iframe title="Peta Google Maps untuk Lot 9311A, Kampung Ulu Kenderung, Gerik" src="https://maps.google.com/maps?q=LOT%209311A%2C%20KG%20ULU%20KENDERUNG%2C%2033300%20GERIK%2C%20PERAK&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a href="https://www.google.com/maps/search/?api=1&amp;query=LOT%209311A%2C%20KG%20ULU%20KENDERUNG%2C%2033300%20GERIK%2C%20PERAK" target="_blank" rel="noopener noreferrer" class="map-link">Buka alamat di Google Maps ↗</a></div></div>
-        <form id="booking-form" class="booking-form"><div class="form-title"><h2>Rancang waktu rehat.</h2><span>♡</span></div><p class="muted">Pertanyaan sahaja. Kekosongan disahkan oleh pemilik.</p><label for="guest-name">Nama anda <span>(pilihan)</span></label><input id="guest-name" name="name" autocomplete="name" placeholder="Nama panggilan anda" maxlength="80"><div class="form-row"><div><label for="check-in">Tarikh masuk</label><input id="check-in" name="checkIn" type="date" required></div><div><label for="check-out">Tarikh keluar</label><input id="check-out" name="checkOut" type="date" required></div></div><label for="guests">Jumlah tetamu</label><input id="guests" name="guests" type="number" min="1" step="1" inputmode="numeric" placeholder="Contoh: 5" required><small class="field-note">Nyatakan bilangan tetamu dan dapatkan pengesahan kapasiti daripada pemilik.</small><label for="note">Pertanyaan tambahan <span>(pilihan)</span></label><textarea id="note" name="note" rows="3" maxlength="600" placeholder="Contoh: Adakah sesuai untuk warga emas?"></textarea><button class="button" type="submit">Sediakan mesej WhatsApp <span>↗</span></button><small class="draft-note">Pertanyaan akan dibuka dalam WhatsApp selepas anda menyemak mesej.</small></form>
+    <!-- Bahagian message-dialog: susunan kandungan dan kawalan pengguna. -->
+    <dialog id="message-dialog">
+      <button
+        id="close-dialog"
+        class="close-dialog"
+        aria-label="Tutup pratonton"
+      >
+        ×
+      </button>
+      <p class="eyebrow">SATU LANGKAH LAGI</p>
+      <h2>Mesej untuk Affendi.</h2>
+      <p id="whatsapp-hint">
+        Semak mesej ini sebelum membukanya dalam WhatsApp.
+      </p>
+      <label for="message-preview">Pratonton mesej</label>
+      <textarea id="message-preview" rows="9" readonly></textarea>
+      <div class="dialog-actions">
+        <button id="copy-message" class="button" type="button">
+          Salin mesej
+        </button>
+        <a
+          id="whatsapp-link"
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          Buka WhatsApp ↗
+        </a>
       </div>
-      <section class="faq"><p class="eyebrow">SEBELUM ANDA SINGGAH</p><h2>Soalan lazim.</h2><details><summary>Adakah mengisi borang terus mengesahkan tempahan?</summary><p>Tidak. Borang ini menyediakan mesej pertanyaan sahaja. Pemilik perlu mengesahkan kekosongan, harga dan cara tempahan.</p></details><details><summary>Bagaimanakah cara mendapatkan kadar penginapan?</summary><p>Nyatakan tarikh dan jumlah tetamu melalui borang. Pemilik akan memaklumkan kadar untuk tarikh tersebut.</p></details><details><summary>Di manakah saya boleh mendapatkan maklumat kemudahan?</summary><p>Senarai kemudahan dan foto sebenar akan dikemas kini selepas disahkan oleh keluarga. Anda boleh bertanya terus kepada pemilik.</p></details></section>
-    </section>
-  </main>
+      <p id="copy-status" role="status"></p>
+    </dialog>
 
-  <footer class="wrap footer"><a class="footer-brand" href="#utama">serambi bonda<span>Rumah yang menyimpan kasih.</span></a><p>Lot 9311A, Kg Ulu Kenderung<br>33300 Gerik, Perak<br><small>© <span id="year"></span> Serambi Bonda</small></p><button id="install-reopen" class="install-reopen" type="button">Panduan pemasangan aplikasi ↗</button><a href="#hubungi" class="text-link">Mari berkenalan ↗</a></footer>
-  <nav class="mobile-nav" aria-label="Navigasi telefon"><a href="#utama"><span aria-hidden="true">⌂</span>Utama</a><a href="#ruang"><span aria-hidden="true">▦</span>Ruang</a><a href="#aktiviti"><span aria-hidden="true">☼</span>Aktiviti</a><a href="#hubungi"><span aria-hidden="true">✉</span>Hubungi</a></nav>
-
-  <!-- Tawaran aplikasi muncul sekali selepas laman dibuka dalam pelayar. -->
-  <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title" lang="ms">
-    <button id="close-install" class="close-dialog" type="button" aria-label="Tutup panduan pemasangan">×</button>
-    <img class="install-icon" src="icons/icon-192.png" alt="">
-    <p class="eyebrow">SERAMBI BONDA PADA PERANTI ANDA</p>
-    <h2 id="install-title" tabindex="-1">Pasang Serambi Bonda.</h2>
-    <p id="install-description">Akses laman ini sebagai aplikasi melalui skrin utama peranti atau komputer anda.</p>
-
-    <!-- Gambar langkah sebenar untuk Safari pada iPhone dan iPad. -->
-    <div id="install-ios-guide" class="install-visual-guide" hidden>
-      <p class="guide-note">Gunakan Safari. Jika laman ini dibuka melalui aplikasi lain, pilih “Open in Safari” terlebih dahulu. Pilih tangkapan skrin untuk melihat paparan yang lebih besar.</p>
-      <ol class="guide-list">
-        <li class="guide-step">
-          <div class="guide-step-heading"><span>1</span><div><h3>Buka menu halaman</h3><p>Tekan ikon menu di sebelah alamat laman. Jika butang “Share” dipaparkan, tekan butang tersebut.</p></div></div>
-          <a href="images/install-step-1.png" target="_blank" rel="noopener" aria-label="View the Safari page menu screenshot at full size"><img src="images/install-step-1.png" alt="Safari address bar showing the page menu icon" width="1178" height="284"></a>
-        </li>
-        <li class="guide-step">
-          <div class="guide-step-heading"><span>2</span><div><h3>Tekan “Share”</h3><p>Pilih “Share” (Kongsi) dalam menu halaman.</p></div></div>
-          <a href="images/install-step-2.png" target="_blank" rel="noopener" aria-label="View the Share menu screenshot at full size"><img src="images/install-step-2.png" alt="Safari page menu with the Share option visible" width="735" height="600" loading="lazy"></a>
-        </li>
-        <li class="guide-step">
-          <div class="guide-step-heading"><span>3</span><div><h3>Tambah pada skrin utama</h3><p>Tatal menu perkongsian, kemudian tekan “Add to Home Screen” (Tambah pada Skrin Utama).</p></div></div>
-          <a href="images/install-step-3.png" target="_blank" rel="noopener" aria-label="View the Add to Home Screen screenshot at full size"><img src="images/install-step-3.png" alt="iPhone Share sheet showing Add to Home Screen" width="1090" height="844" loading="lazy"></a>
-        </li>
-      </ol>
-      <p class="guide-finish">Akhir sekali, aktifkan “Open as Web App” jika pilihan tersebut tersedia, kemudian tekan <strong>“Add” (Tambah)</strong>.</p>
-    </div>
-
-    <p id="install-steps" class="install-steps"></p>
-    <div class="install-actions">
-      <button class="button" id="install-button" type="button" hidden>Pasang aplikasi ↗</button>
-      <button class="install-later" id="install-later" type="button">Teruskan ke laman</button>
-    </div>
-  </dialog>
-
-  <!-- Dialog membolehkan mesej disemak sebelum membuka WhatsApp. -->
-  <dialog id="message-dialog"><button id="close-dialog" class="close-dialog" aria-label="Tutup pratonton">×</button><p class="eyebrow">SATU LANGKAH LAGI</p><h2>Mesej untuk Affendi.</h2><p id="whatsapp-hint">Semak mesej ini sebelum membukanya dalam WhatsApp.</p><label for="message-preview">Pratonton mesej</label><textarea id="message-preview" rows="9" readonly></textarea><div class="dialog-actions"><button id="copy-message" class="button" type="button">Salin mesej</button><a id="whatsapp-link" class="button" target="_blank" rel="noopener noreferrer" hidden>Buka WhatsApp ↗</a></div><p id="copy-status" role="status"></p></dialog>
-  <dialog id="photo-dialog" class="photo-dialog"><button id="close-photo" class="close-dialog" aria-label="Tutup foto">×</button><img id="large-photo" alt=""><p id="photo-caption"></p></dialog>
-  <noscript><div class="noscript-note">Aktifkan JavaScript untuk navigasi halaman dan borang pertanyaan. Halaman utama masih boleh dibaca.</div></noscript>
-</body>
+    <!-- Bahagian photo-dialog: susunan kandungan dan kawalan pengguna. -->
+    <dialog id="photo-dialog" class="photo-dialog">
+      <button id="close-photo" class="close-dialog" aria-label="Tutup foto">
+        ×
+      </button>
+      <img id="large-photo" alt="" />
+      <p id="photo-caption"></p>
+    </dialog>
+    <noscript>
+      <div class="noscript-note">
+        Aktifkan JavaScript untuk navigasi halaman dan borang pertanyaan.
+        Halaman utama masih boleh dibaca.
+      </div>
+    </noscript>
+  </body>
 </html>
